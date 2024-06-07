@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.base{
+    color: rgb(77, 10, 139);
+}
+.active{
+    background-color:rgb(179, 180, 180) !important ;
+    font-weight: 900 !important;
+    color: blueviolet !important;
+}
+.btn-base{
+    font-weight: bold;
+    color: white;
+    background-color: blueviolet;
+}
+.featured-item{
+    background-image: url('./assets/About/purple-water-1.jpg');
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center center; */
+    /* height: 100vh;  */
+    /* margin: 0; */
+}
+.react-tabs__tab--selected{
+    color: rgb(230, 183, 42)!important;
+    font-weight: bold !important;
+}
