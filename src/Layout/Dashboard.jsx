@@ -13,7 +13,7 @@ const Dashboard = () => {
                 <Outlet></Outlet>
             </div>
             {/* Dashboard Side Bar */}
-            <div className="w-64 min-h-screen bg-purple-200">
+            <div className="w-40 md:w-64 min-h-screen bg-purple-200">
                 <ul className="menu p-4 uppercase">
                     {
                         // isManager ? 

@@ -8,12 +8,12 @@ const JoinAsManager = () => {
                 <title>Asset Track Pro | HR Manager Registration</title>
             </Helmet>
             <h2 className="text-3xl text-center mb-8">Join As A HR Manager!</h2>
-            <div className="hero py-12 bg-purple-200 rounded-3xl">
+            <div className="hero py-12 bg-purple-200 rounded-3xl w-4/5 md:w-full mx-auto">
                 <div className="hero-content flex-col lg:flex-row-reverse gap-6 w-5/6 mx-auto">
                     <div className="text-center lg:text-left">
                         <img className="w-full h-[500px]" src={login} alt="login" />
                     </div>
-                    <div className="card shrink-0 w-1/2 mx-auto shadow-2xl bg-base-100">
+                    <div className="card shrink-0 w-full md:w-1/2 mx-auto shadow-2xl bg-base-100">
                     <form className="card-body ">
                         <div className="flex flex-col md:flex-row gap-4">
                             <div>
