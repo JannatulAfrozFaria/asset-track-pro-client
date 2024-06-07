@@ -1,143 +1,162 @@
 [
-    {
-      "name": "Laptop",
-      "type": "Returnable",
-      "quantity": 10,
-      "stock": "Available",
-      "date_added": "2024/05/01"
-    },
-    {
-      "name": "Keyboard",
-      "type": "Returnable",
-      "quantity": 15,
-      "stock": "Available",
-      "date_added": "2024/05/05"
-    },
-    {
-      "name": "Mouse",
-      "type": "Returnable",
-      "quantity": 5,
-      "stock": "Out-of-Stock",
-      "date_added": "2024/04/20"
-    },
-    {
-      "name": "Chair",
-      "type": "Returnable",
-      "quantity": 8,
-      "stock": "Available",
-      "date_added": "2024/03/15"
-    },
-    {
-      "name": "Desk",
-      "type": "Returnable",
-      "quantity": 12,
-      "stock": "Available",
-      "date_added": "2024/02/10"
-    },
-    {
-      "name": "Cell Phone",
-      "type": "Returnable",
-      "quantity": 7,
-      "stock": "Out-of-Stock",
-      "date_added": "2024/04/25"
-    },
-    {
-      "name": "Pen",
-      "type": "Non-Returnable",
-      "quantity": 100,
-      "stock": "Available",
-      "date_added": "2024/05/10"
-    },
-    {
-      "name": "Pencil",
-      "type": "Non-Returnable",
-      "quantity": 50,
-      "stock": "Available",
-      "date_added": "2024/04/30"
-    },
-    {
-      "name": "Paper",
-      "type": "Non-Returnable",
-      "quantity": 500,
-      "stock": "Available",
-      "date_added": "2024/03/20"
-    },
-    {
-      "name": "Diary",
-      "type": "Non-Returnable",
-      "quantity": 30,
-      "stock": "Available",
-      "date_added": "2024/02/25"
-    },
-    {
-      "name": "Tissue Paper",
-      "type": "Non-Returnable",
-      "quantity": 200,
-      "stock": "Out-of-Stock",
-      "date_added": "2024/04/15"
-    },
-    {
-      "name": "Monitor",
-      "type": "Returnable",
-      "quantity": 10,
-      "stock": "Available",
-      "date_added": "2024/01/10"
-    },
-    {
-      "name": "Projector",
-      "type": "Returnable",
-      "quantity": 3,
-      "stock": "Out-of-Stock",
-      "date_added": "2024/03/05"
-    },
-    {
-      "name": "Tablet",
-      "type": "Returnable",
-      "quantity": 6,
-      "stock": "Available",
-      "date_added": "2024/05/12"
-    },
-    {
-      "name": "Smart Watch",
-      "type": "Returnable",
-      "quantity": 4,
-      "stock": "Available",
-      "date_added": "2024/02/28"
-    },
-    {
-      "name": "Headphones",
-      "type": "Returnable",
-      "quantity": 8,
-      "stock": "Out-of-Stock",
-      "date_added": "2024/04/05"
-    },
-    {
-      "name": "Whiteboard",
-      "type": "Returnable",
-      "quantity": 2,
-      "stock": "Available",
-      "date_added": "2024/03/18"
-    },
-    {
-      "name": "Notebook",
-      "type": "Non-Returnable",
-      "quantity": 75,
-      "stock": "Available",
-      "date_added": "2024/04/01"
-    },
-    {
-      "name": "Stapler",
-      "type": "Non-Returnable",
-      "quantity": 25,
-      "stock": "Out-of-Stock",
-      "date_added": "2024/05/02"
-    },
-    {
-      "name": "Scissors",
-      "type": "Non-Returnable",
-      "quantity": 40,
-      "stock": "Available",
-      "date_added": "2024/03/22"
-    }
-  ]
-  
+  {
+    "name": "Laptop",
+    "type": "Returnable",
+    "quantity": 10,
+    "stock": "Available",
+    "date_added": "2024/05/01",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "name": "Keyboard",
+    "type": "Returnable",
+    "quantity": 15,
+    "stock": "Available",
+    "date_added": "2024/05/05",
+    "image": "images/keyboard.jpg"
+  },
+  {
+    "name": "Mouse",
+    "type": "Returnable",
+    "quantity": 5,
+    "stock": "Out-of-Stock",
+    "date_added": "2024/04/20",
+    "image": "images/mouse.jpg"
+  },
+  {
+    "name": "Chair",
+    "type": "Returnable",
+    "quantity": 8,
+    "stock": "Available",
+    "date_added": "2024/03/15",
+    "image": "images/chair.jpg"
+  },
+  {
+    "name": "Desk",
+    "type": "Returnable",
+    "quantity": 12,
+    "stock": "Available",
+    "date_added": "2024/02/10",
+    "image": "images/desk.jpg"
+  },
+  {
+    "name": "Cell Phone",
+    "type": "Returnable",
+    "quantity": 7,
+    "stock": "Out-of-Stock",
+    "date_added": "2024/04/25",
+    "image": "images/cell_phone.jpg"
+  },
+  {
+    "name": "Pen",
+    "type": "Non-Returnable",
+    "quantity": 100,
+    "stock": "Available",
+    "date_added": "2024/05/10",
+    "image": "images/pen.jpg"
+  },
+  {
+    "name": "Pencil",
+    "type": "Non-Returnable",
+    "quantity": 50,
+    "stock": "Available",
+    "date_added": "2024/04/30",
+    "image": "images/pencil.jpg"
+  },
+  {
+    "name": "Paper",
+    "type": "Non-Returnable",
+    "quantity": 500,
+    "stock": "Available",
+    "date_added": "2024/03/20",
+    "image": "images/paper.jpg"
+  },
+  {
+    "name": "Diary",
+    "type": "Non-Returnable",
+    "quantity": 30,
+    "stock": "Available",
+    "date_added": "2024/02/25",
+    "image": "images/diary.jpg"
+  },
+  {
+    "name": "Tissue Paper",
+    "type": "Non-Returnable",
+    "quantity": 200,
+    "stock": "Out-of-Stock",
+    "date_added": "2024/04/15",
+    "image": "images/tissue_paper.jpg"
+  },
+  {
+    "name": "Monitor",
+    "type": "Returnable",
+    "quantity": 10,
+    "stock": "Available",
+    "date_added": "2024/01/10",
+    "image": "images/monitor.jpg"
+  },
+  {
+    "name": "Projector",
+    "type": "Returnable",
+    "quantity": 3,
+    "stock": "Out-of-Stock",
+    "date_added": "2024/03/05",
+    "image": "images/projector.jpg"
+  },
+  {
+    "name": "Tablet",
+    "type": "Returnable",
+    "quantity": 6,
+    "stock": "Available",
+    "date_added": "2024/05/12",
+    "image": "images/tablet.jpg"
+  },
+  {
+    "name": "Smart Watch",
+    "type": "Returnable",
+    "quantity": 4,
+    "stock": "Available",
+    "date_added": "2024/02/28",
+    "image": "images/smart_watch.jpg"
+  },
+  {
+    "name": "Headphones",
+    "type": "Returnable",
+    "quantity": 8,
+    "stock": "Out-of-Stock",
+    "date_added": "2024/04/05",
+    "image": "images/headphones.jpg"
+  },
+  {
+    "name": "Whiteboard",
+    "type": "Returnable",
+    "quantity": 2,
+    "stock": "Available",
+    "date_added": "2024/03/18",
+    "image": "images/whiteboard.jpg"
+  },
+  {
+    "name": "Notebook",
+    "type": "Non-Returnable",
+    "quantity": 75,
+    "stock": "Available",
+    "date_added": "2024/04/01",
+    "image": "images/notebook.jpg"
+  },
+  {
+    "name": "Stapler",
+    "type": "Non-Returnable",
+    "quantity": 25,
+    "stock": "Out-of-Stock",
+    "date_added": "2024/05/02",
+    "image": "images/stapler.jpg"
+  },
+  {
+    "name": "Scissors",
+    "type": "Non-Returnable",
+    "quantity": 40,
+    "stock": "Available",
+    "date_added": "2024/03/22",
+    "image": "images/scissors.jpg"
+  }
+]

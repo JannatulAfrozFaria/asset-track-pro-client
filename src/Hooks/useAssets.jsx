@@ -4,7 +4,7 @@ const useAssets = () => {
     const [assets,setAssets] = useState([]);
     const[loading,setLoading] = useState(true)
     useEffect(()=>{
-        fetch('assets.json')
+        fetch('/assets.json')
         .then(res=> res.json())
         .then(data=>{
             setAssets(data);

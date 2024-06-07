@@ -6,9 +6,9 @@
     color: rgb(77, 10, 139);
 }
 .active{
-    background-color:rgb(179, 180, 180) !important ;
-    font-weight: 900 !important;
-    color: blueviolet !important;
+    background-color:blueviolet !important ;
+    font-weight: 600 !important;
+    color: white !important;
 }
 .btn-base{
     font-weight: bold;
