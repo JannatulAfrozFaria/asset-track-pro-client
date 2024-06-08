@@ -4,10 +4,15 @@ import LoginIcon from "../../Login.json"
 import LoginIcon2 from "../../Login2.json"
 import Title from '../../Components/Title';
 import useAuth from '../../Hooks/useAuth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const {signIn} = useAuth();
+    const navigate = useNavigate();
+    const location =  useLocation();
+
+    const from = location?.state?.from?.pathname || "/"
     const handleLogin = (event) =>{
         event.preventDefault();
         const form = event.target;
@@ -17,6 +22,14 @@ const Login = () => {
             .then(result =>{
                 const user = result.user;
                 console.log(user);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Logged in successfully!",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate(from,{replace: true});
             })
     }
     return (

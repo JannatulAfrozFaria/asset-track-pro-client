@@ -9,6 +9,8 @@ import JoinAsManager from "../Pages/JoinAsManager/JoinAsManager";
 import Dashboard from "../Layout/Dashboard";
 import AllAssets from "../Pages/Dashboard/Manager/AllAssets";
 import SignUp from "../Pages/SignUp/SignUp";
+import Secret from "../Pages/Shared/Secret/Secret";
+import PrivateRoute from "./PrivateRoute";
 
   export const router = createBrowserRouter([
     {
@@ -34,6 +36,12 @@ import SignUp from "../Pages/SignUp/SignUp";
         {
             path: '/signup',
             element: <SignUp></SignUp>
+        },
+        {
+            path: 'secret',
+            element: <PrivateRoute>
+                        <Secret></Secret>
+                    </PrivateRoute>
         }
     ]
     },
