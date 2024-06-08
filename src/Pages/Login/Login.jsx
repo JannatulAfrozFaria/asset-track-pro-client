@@ -3,15 +3,21 @@ import Lottie from "lottie-react";
 import LoginIcon from "../../Login.json"
 import LoginIcon2 from "../../Login2.json"
 import Title from '../../Components/Title';
+import useAuth from '../../Hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const {signIn} = useAuth();
     const handleLogin = (event) =>{
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password =  form.password.value;
-        console.log(email,password);
-
+        signIn(email,password)
+            .then(result =>{
+                const user = result.user;
+                console.log(user);
+            })
     }
     return (
         <div className='w-5/6 md:w-full mx-auto'>
@@ -44,7 +50,10 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <input className="btn btn-base" type="submit" value="Login" />
                             </div>
+
+                            <h2 className="text-gray-500 text-sm mt-1">New Here? <Link className='text-purple-400 font-semibold' to="/signup" > Create a new Account</Link>  </h2>
                         </form>
+                        
                     </div>
                     <div>
                         <div className="text-center md:text-left">

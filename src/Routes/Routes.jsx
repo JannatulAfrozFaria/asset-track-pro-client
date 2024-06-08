@@ -8,6 +8,7 @@ import JoinAsEmployee from "../Pages/JoinAsEmployee/JoinAsEmployee";
 import JoinAsManager from "../Pages/JoinAsManager/JoinAsManager";
 import Dashboard from "../Layout/Dashboard";
 import AllAssets from "../Pages/Dashboard/Manager/AllAssets";
+import SignUp from "../Pages/SignUp/SignUp";
 
   export const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ import AllAssets from "../Pages/Dashboard/Manager/AllAssets";
         {
             path: '/login',
             element: <Login></Login>
+        },
+        {
+            path: '/signup',
+            element: <SignUp></SignUp>
         }
     ]
     },
