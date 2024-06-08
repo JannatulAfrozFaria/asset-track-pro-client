@@ -3,6 +3,15 @@ import signUp from "../../assets/login/signUp.jpg"
 
 
 const JoinAsEmployee = () => {
+    const handleJoin = (event) =>{
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password =  form.password.value;
+        const date = form.date.value;
+        console.log(name,email,password,date);
+    }
     return (
         <div className="my-8">
             <Helmet>
@@ -15,7 +24,7 @@ const JoinAsEmployee = () => {
                         <img className="w-full h-[345px] rounded-2xl" src={signUp} alt="login" />
                     </div>
                     <div className="card shrink-0 w-full md:w-1/2 mx-auto shadow-2xl bg-base-100">
-                    <form className="card-body ">
+                    <form onSubmit={handleJoin} className="card-body ">
                         <div className="flex flex-col md:flex-row gap-4">
                             <div>
                                 {/* Full Name */}
@@ -23,14 +32,14 @@ const JoinAsEmployee = () => {
                                     <label className="label">
                                         <span className="label-text">Full Name</span>
                                     </label>
-                                    <input type="email" placeholder="Full Name" className="input input-bordered" required />
+                                    <input type="text" name="name" placeholder="Full Name" className="input input-bordered" required />
                                 </div>
                                 {/* Date Of Birth */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Date of Birth</span>
                                     </label>
-                                    <input type="email" placeholder="Date Of Birth" className="input input-bordered" required />
+                                    <input type="date" name="date" placeholder="Date Of Birth" className="input input-bordered" required />
                                 </div>
                             </div>
                             <div>
@@ -39,14 +48,14 @@ const JoinAsEmployee = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" placeholder="email" className="input input-bordered" required />
-                                </div>
+                                    <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                 </div>
                                 {/* Password */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" placeholder="password" className="input input-bordered" required />
+                                    <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
@@ -54,7 +63,7 @@ const JoinAsEmployee = () => {
                             </div>
                         </div>
                         <div className="form-control mt-6">
-                        <button className="btn btn-base">Sign Up</button>
+                            <input className="btn btn-base" type="submit" value="Join" />
                         </div>
                     </form>
                     </div>
