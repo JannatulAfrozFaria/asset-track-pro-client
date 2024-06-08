@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import Tippy from "@tippyjs/react";
 
 const NavBar = () => {
     const {user,logOut} = useAuth();
@@ -39,6 +40,15 @@ const NavBar = () => {
                 <div className="navbar-end">
                     {
                         user? <>
+                                <Tippy content={user?.displayName} >
+                                    <div className="profile-pic w-10 rounded-full mr-3">
+                                        <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
+                                    </div>
+                                </Tippy>
+                            {/* <div className="flex gap-2 mr-3">
+                                <div>{user?.displayName} </div>
+                                <div> <img className="w-12 rounded-full" src={user?.photoURL} alt="" /> </div>
+                            </div> */}
                             <button onClick={handleLogOut}><Link className="btn btn-base"><a href="">Logout</a></Link></button>
                             </> 
                         : <><Link className="btn btn-base" to="/login"><a href="">Login</a></Link></>

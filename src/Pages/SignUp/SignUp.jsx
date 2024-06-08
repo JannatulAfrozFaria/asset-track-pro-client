@@ -1,15 +1,17 @@
 import { Helmet } from 'react-helmet';
 import Title from '../../Components/Title';
 import Lottie from 'lottie-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import signUp1 from '../../../src/signUp1.json';
 import signUp2 from '../../../src/signUp2.json';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
-    const {createUser} = useAuth();
-    const {register, handleSubmit, watch, formState: { errors }} = useForm();
+    const {createUser,updateUserProfile} = useAuth();
+    const {register, handleSubmit, watch, reset, formState: { errors }} = useForm();
+    const navigate =  useNavigate();
 
     const onSubmit = (data) => {
         console.log(data);
@@ -17,17 +19,18 @@ const SignUp = () => {
         .then(result=>{
             const loggedUser =  result.user;
             console.log(loggedUser);
+            updateUserProfile(data.name,data.photoURL)
+            .then(()=>{
+                console.log('user profile info updated')
+                reset();
+                Swal.fire("User created successfully!");
+                navigate('/');
+            }).catch((error)=>{
+                console.log(error)
+            });
         })
     }
     console.log(watch("example"))
-
-    // const handleSignUp = () =>{
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const email = form.email.value;
-    //     const password =  form.password.value;
-    //     console.log(email,password);
-    // }
     return (
         <div className="w-5/6 md:w-full mx-auto" >
             <Helmet>
@@ -53,10 +56,10 @@ const SignUp = () => {
                                 {/* PROFILE-----PICTURE */}
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Profile Picture</span>
+                                        <span className="label-text">Photo URL</span>
                                     </label>
-                                    <input {...register("photo", { required: true })} type="text" name="photo" placeholder="Photo URL" className="input input-bordered" />
-                                    {errors.photo && <span className="text-red-500" >Profile Picture is required</span>}
+                                    <input {...register("photoURL", { required: true })} type="text" placeholder="Photo URL" className="input input-bordered" />
+                                    {errors.photoURL && <span className="text-red-500" >Photo URL is required</span>}
                                 </div>
                             </div>
                             {/* ------EMAIL----- */}
