@@ -7,6 +7,7 @@ const SignUp = () => {
             <Helmet>
                 <title>Asset Track Pro | Sign Up</title>
             </Helmet>
+            
         </div>
     );
 };

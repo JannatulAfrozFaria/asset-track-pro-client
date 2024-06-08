@@ -19,10 +19,9 @@ const NavBar = () => {
                        {NavOptions}
                     </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl"> 
-                        <img className='w-16' src="/src/assets/icons/icon.png" alt="" />
-                        Asset Track Pro Ltd
-                    </a>
+                    {/* DYNAMIC COMPANY NAME */}
+                    <img className='w-16' src="/src/assets/icons/icon.png" alt="" />
+                    <a className="btn btn-ghost text-xl"> Asset Track Pro Ltd</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

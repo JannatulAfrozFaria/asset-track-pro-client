@@ -32,12 +32,12 @@ const AllAssets = () => {
     //FUNCTION FOR ------FILTER------
 
     //FUNCTION FOR-----SORT------
-    // const handleQuantitySorting = () =>{
-    //     const sortByQuantity = [...searchResults.sort((a,b)=>{
-    //         return parseInt(b.quantity.slice(1)) - parseInt(a.quantity.slice(1))
-    //     })]
-    //     setSearchResults(sortByQuantity);
-    // }
+    const handleQuantitySorting = () =>{
+        const sortByQuantity = [...searchResults.sort((a,b)=>{
+            return parseInt(b.quantity.slice(1)) - parseInt(a.quantity.slice(1))
+        })]
+        setSearchResults(sortByQuantity);
+    }
 
     return (
         <div className='w-4/5 mx-auto text-center my-16'>
@@ -74,7 +74,7 @@ const AllAssets = () => {
                             <div className="dropdown dropdown-bottom dropdown-end">
                             <div tabIndex={0} role="button " className="btn bg-purple-200 w-28 md:w-36">Sort  <IoIosArrowDown /> </div>
                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-boxw-52">
-                                {/* <li onClick={handleQuantitySorting} ><a>Quantity</a></li> */}
+                                <li onClick={handleQuantitySorting} ><a>Quantity</a></li>
                             </ul>
                             </div>
                         </div>
