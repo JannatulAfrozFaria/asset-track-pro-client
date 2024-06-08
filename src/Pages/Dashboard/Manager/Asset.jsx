@@ -10,7 +10,7 @@ const Asset = ({asset}) => {
                     {name}
                     <div className="badge badge-primary">{stock}</div>
                 </h2>
-               <div className="grid grid-cols-2 gap-4 text-left">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 text-left">
                     <p className="text-gray-600">Type: <span className="font-semibold text-purple-500">{type}</span> </p>
                     <p className="text-gray-600">Quantity: <span className="font-semibold text-purple-500">{quantity}</span> </p>
                </div>

@@ -19,23 +19,25 @@ const Dashboard = () => {
                         // isManager ? 
                         <>
                             <li>
-                                <NavLink to="/dashboard/adminHome"><FaHome className="mr-2" ></FaHome> HR Home</NavLink>
+                                <img className='w-1/2' src="/src/assets/icons/icon.png" alt="" />
                             </li>
                             <li>
-                                <NavLink to="/dashboard/addItems"><FaUtensils className="mr-2"></FaUtensils > Add Items</NavLink>
+                                <NavLink to="/dashboard/allAssets"><FaUsers></FaUsers>  Asset List</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/manageItems"><FaBars className="mr-2" ></FaBars>  Manage Items</NavLink>
+                                <NavLink to="/dashboard/adminHome"><FaHome className="mr-2" ></FaHome> Add an Asset</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/bookings"> <FaBook className="mr-2" ></FaBook> Manage Bookings </NavLink>
+                                <NavLink to="/dashboard/addItems"><FaUtensils className="mr-2"></FaUtensils > All Requests</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/users"><FaUsers></FaUsers>  All users</NavLink>
+                                <NavLink to="/dashboard/users"><FaUsers></FaUsers>My EMployee list</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/allAssets"><FaUsers></FaUsers>  All Assets</NavLink>
+                                <NavLink to="/dashboard/bookings"> <FaBook className="mr-2" ></FaBook> Add an Employee </NavLink>
                             </li>
+                            
+                            
                         </>
                         // :
                         // <>
@@ -43,19 +45,13 @@ const Dashboard = () => {
                         //         <NavLink to="/dashboard/userHome"><FaHome className="mr-2" ></FaHome> Employee Home</NavLink>
                         //     </li>
                         //     <li>
-                        //         <NavLink to="/dashboard/reservation"><FaCalendar className="mr-2" ></FaCalendar> Reservation</NavLink>
+                        //         <NavLink to="/dashboard/reservation"><FaCalendar className="mr-2" ></FaCalendar> My Assets</NavLink>
                         //     </li>
                         //     {/* <li>
-                        //         <NavLink to="/dashboard/payment"><FaWallet className="mr-2" ></FaWallet> Payment History</NavLink>
+                        //         <NavLink to="/dashboard/payment"><FaWallet className="mr-2" ></FaWallet> My Team</NavLink>
                         //     </li> */}
                         //     <li>
-                        //         <NavLink to="/dashboard/cart"> <IoCart className="mr-2" />My Cart ({assets.length}) </NavLink>
-                        //     </li>
-                        //     <li>
-                        //         <NavLink to="/dashboard/review"> <IoCart className="mr-2" />Add Review</NavLink>
-                        //     </li>
-                        //     <li>
-                        //         <NavLink to="/dashboard/paymentHistory"> <FaBookBookmark className="mr-2" ></FaBookBookmark>Real Payment History</NavLink>
+                        //         <NavLink to="/dashboard/cart"> <IoCart className="mr-2" />Request for an asset ({assets.length}) </NavLink>
                         //     </li>
                         // </>
                     }
@@ -65,13 +61,13 @@ const Dashboard = () => {
                         <NavLink to="/"><FaHome className="mr-2" ></FaHome> Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/menu"><FaBars className="mr-2" ></FaBars> Menu</NavLink>
+                        <NavLink to="/menu"><FaUser className="mr-2" ></FaUser> Profile</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/order/salad"><FaShop className="mr-2" ></FaShop> Shop</NavLink>
+                        <NavLink to="/menu"><FaBars className="mr-2" ></FaBars> User Name</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/order/contact"><FaMailBulk className="mr-2" ></FaMailBulk> Contact</NavLink>
+                        <NavLink to="/menu"><FaBars className="mr-2" ></FaBars> Profile picture</NavLink>
                     </li>
                 </ul>
             </div>
