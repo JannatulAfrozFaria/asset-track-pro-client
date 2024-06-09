@@ -3,6 +3,8 @@ import { FaBookBookmark, FaShop } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
 import { NavLink, Outlet } from "react-router-dom";
 import useAssets from "../Hooks/useAssets";
+import { PiTreasureChestDuotone } from "react-icons/pi";
+
 
 const Dashboard = () => {
     const [assets] = useAssets();
@@ -15,14 +17,11 @@ const Dashboard = () => {
             {/* Dashboard Side Bar */}
             <div className="w-40 md:w-64 min-h-screen bg-purple-200">
                 <ul className="menu p-4 uppercase">
-                    {
-                        // isManager ? 
-                        <>
                             <li>
                                 <img className='w-1/2' src="/src/assets/icons/icon.png" alt="" />
                             </li>
                             <li>
-                                <NavLink to="/dashboard/allAssets"><FaUsers></FaUsers>  Asset List</NavLink>
+                                <NavLink to="/dashboard/allAssets"><PiTreasureChestDuotone />Asset List</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/adminHome"><FaHome className="mr-2" ></FaHome> Add an Asset</NavLink>
@@ -37,24 +36,18 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/bookings"> <FaBook className="mr-2" ></FaBook> Add an Employee </NavLink>
                             </li>
                             
-                            
-                        </>
-                        // :
-                        // <>
-                        //     <li>
-                        //         <NavLink to="/dashboard/userHome"><FaHome className="mr-2" ></FaHome> Employee Home</NavLink>
-                        //     </li>
-                        //     <li>
-                        //         <NavLink to="/dashboard/reservation"><FaCalendar className="mr-2" ></FaCalendar> My Assets</NavLink>
-                        //     </li>
-                        //     {/* <li>
-                        //         <NavLink to="/dashboard/payment"><FaWallet className="mr-2" ></FaWallet> My Team</NavLink>
-                        //     </li> */}
-                        //     <li>
-                        //         <NavLink to="/dashboard/cart"> <IoCart className="mr-2" />Request for an asset ({assets.length}) </NavLink>
-                        //     </li>
-                        // </>
-                    }
+                            {/* EMPLOYEE-----DASHBOARD */}
+                            <div className="divider"></div>
+                            <li>
+                                <NavLink to="/dashboard/userHome"><FaHome className="mr-2" ></FaHome> Employee Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/reservation"><FaCalendar className="mr-2" ></FaCalendar> My Assets</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/cart"> <IoCart className="mr-2" />Request for an asset ({assets.length}) </NavLink>
+                            </li>
+
                     {/* Shared Menu Options------- */}
                     <div className="divider"></div>
                     <li>
