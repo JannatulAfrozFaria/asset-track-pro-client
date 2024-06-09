@@ -1,9 +1,13 @@
+import axios from "axios";
 import useAuth from "../../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 
 const AssetCard = ({asset}) => {
     const {name,type, quantity,stock,date_added,image,_id} = asset;
     const{user} = useAuth();
+    const axiosSecure = useAxiosSecure();
 
     const handleRequest = (item) =>{
         console.log(item);
@@ -12,6 +16,19 @@ const AssetCard = ({asset}) => {
             email: user.email,
             name,type,date_added,image
         }
+        axiosSecure.post('/requests',requestedAsset)
+        .then(res=>{
+            console.log(res.data)
+            if(res.data.insertedId){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `Request for ${name} has been sent!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
     }
     return (
         // <div className="card card-side bg-base-100 shadow-xl">
@@ -34,7 +51,7 @@ const AssetCard = ({asset}) => {
                     <p>Availability: {stock} </p>
                 </div>
                 <div className="card-actions justify-center">
-                    <button onClick={()=>handleRequest(asset)} className="btn btn-primary">Request</button>
+                    <button onClick={()=>handleRequest(asset)} className="btn bg-purple-200 btn-outline btn-sm w-24">Request</button>
                 </div>
             </div>
         </div>
