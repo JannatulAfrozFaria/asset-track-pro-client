@@ -11,6 +11,8 @@ import AllAssets from "../Pages/Dashboard/Manager/AllAssets";
 import SignUp from "../Pages/SignUp/SignUp";
 import Secret from "../Pages/Shared/Secret/Secret";
 import PrivateRoute from "./PrivateRoute";
+import Profile from "../Pages/Dashboard/Common/Profile";
+import RequestAsset from "../Pages/Dashboard/Employee/RequestAsset";
 
   export const router = createBrowserRouter([
     {
@@ -54,6 +56,15 @@ import PrivateRoute from "./PrivateRoute";
             {
                 path: 'allAssets',
                 element: <AllAssets></AllAssets>
+            },
+            //employee routes
+            {
+                path: 'requestAsset',
+                element: <RequestAsset></RequestAsset>
+            },
+            {
+                path: 'profile',
+                element: <Profile></Profile>
             }
         ]
     }
