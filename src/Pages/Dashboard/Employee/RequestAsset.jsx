@@ -30,7 +30,7 @@ const RequestAsset = () => {
             </Helmet>
             <Title heading={'request for an asset'} subHeading={'Here you can make a request for adding assets to your list'} ></Title>
             <h2 className="text-2xl mb-4 text-purple-500">Total Assets: {assets.length} </h2>
-            {/* SECTION------*/}
+            {/* FILTER AND SEARCH-----SECTION------*/}
             <div className='mb-8 flex flex-col md:flex-row gap-4 justify-center w-5/6 md:w-1/2 mx-auto'>
                 {/* Search------- */}
                 <div className="join">

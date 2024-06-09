@@ -1,10 +1,17 @@
+import useAuth from "../../../Hooks/useAuth";
 
 
 const AssetCard = ({asset}) => {
-    const {name,type, quantity,stock,date_added,image} = asset;
-    
+    const {name,type, quantity,stock,date_added,image,_id} = asset;
+    const{user} = useAuth();
+
     const handleRequest = (item) =>{
         console.log(item);
+        const requestedAsset = {
+            assetId: _id,
+            email: user.email,
+            name,type,date_added,image
+        }
     }
     return (
         // <div className="card card-side bg-base-100 shadow-xl">
