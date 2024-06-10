@@ -45,12 +45,12 @@ const SignUp = () => {
                     <div className="card shadow-2xl bg-base-100 col-span-1">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4" >
-                                {/* USER-----NAME */}
+                                {/* FULL-----NAME */}
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">User Name</span>
+                                        <span className="label-text">Full Name</span>
                                     </label>
-                                    <input {...register("name", { required: true })} type="text" name="name" placeholder="Name" className="input input-bordered" />
+                                    <input {...register("name", { required: true })} type="text" name="name" placeholder="Full Name" className="input input-bordered" />
                                     {errors.name && <span className="text-red-500" >User Name is required</span>}
                                 </div>
                                 {/* PROFILE-----PICTURE */}

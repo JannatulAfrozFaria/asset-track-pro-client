@@ -6,6 +6,7 @@ import Title from '../../Components/Title';
 import useAuth from '../../Hooks/useAuth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../Components/SocialLogin';
 
 const Login = () => {
     const {signIn} = useAuth();
@@ -63,10 +64,9 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <input className="btn btn-base" type="submit" value="Login" />
                             </div>
-
-                            <h2 className="text-gray-500 text-sm mt-1">New Here? <Link className='text-purple-400 font-semibold' to="/signup" > Create a new Account</Link>  </h2>
+                            <h2 className="text-gray-500 text-sm mt-1">New Here? <Link className='text-purple-400 font-semibold' to="/joinAsManager" > Join as a HR Manager</Link>  or <Link className='text-purple-400 font-semibold' to="/joinAsEmployee" > Join as an Employee</Link></h2>
+                            <SocialLogin></SocialLogin>
                         </form>
-                        
                     </div>
                     <div>
                         <div className="text-center md:text-left">

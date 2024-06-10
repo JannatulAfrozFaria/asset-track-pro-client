@@ -3,9 +3,11 @@ import Title from '../../../Components/Title';
 import useAssets from '../../../Hooks/useAssets';
 import Asset from './Asset';
 import { IoIosArrowDown } from "react-icons/io";
+import { Link } from 'react-router-dom';
+
 
 const AllAssets = () => {
-    const [assets] = useAssets();
+    const {assets,loading} = useAssets();
     // console.log(assets);
 
     // STATE FOR-----SEARCH-----
@@ -17,8 +19,10 @@ const AllAssets = () => {
 
     //to load all the Data initially when page is loaded
     useEffect(() => {
-        setSearchResults(assets); 
-      }, []);
+        if(!loading){
+            setSearchResults(assets); 
+        }
+      }, [loading]);
      // FUNCTION FOR-----SEARCH-----
     const handleSearch = () =>{
         const results = assets.filter(asset=>
@@ -30,13 +34,39 @@ const AllAssets = () => {
         setSearchTerm(event.target.value);
     }
     //FUNCTION FOR ------FILTER------
-
+    const handleFilterByStock= (stock) =>{
+        const filteredAssets = searchResults.filter(item=> {
+            if(stock && item.stock === stock){
+                return item;
+            }
+            else if(!stock){
+                return item;
+            }
+        })
+        setSearchResults(filteredAssets);
+        console.log(filteredAssets);
+    }
+    const handleFilterByType= (type) =>{
+        const filteredAssets = searchResults.filter(item=> {
+           
+            if(type && item.type === type){
+                console.log(item);
+                return item;
+            }
+            else if(!type){
+                return item;
+            }
+            // return item;
+        })
+        setSearchResults(filteredAssets);
+    }
     //FUNCTION FOR-----SORT------
     const handleQuantitySorting = () =>{
         const sortByQuantity = [...searchResults.sort((a,b)=>{
-            return parseInt(b.quantity.slice(1)) - parseInt(a.quantity.slice(1))
+            return parseInt(b.quantity) - parseInt(a.quantity)
         })]
         setSearchResults(sortByQuantity);
+        console.log(sortByQuantity);
     }
 
     return (
@@ -60,13 +90,15 @@ const AllAssets = () => {
                 <div className='flex gap-4'>
                     {/* FILTER------OPTION */}
                     <div>
-                        <select defaultValue={''} className="select select-bordered join-item ">
-                                <option disabled>Filter</option>
-                                <option>Available</option>
-                                <option>Out-Of-Stock</option>
-                                <option>Returnable</option>
-                                <option>Non-Returnable</option>
-                            </select>
+                        <details className="dropdown">
+                            <summary className="btn bg-purple-200 w-28 md:w-36">Filter <IoIosArrowDown /></summary>
+                            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                <li><Link onClick={()=>handleFilterByStock('Available')}>Available</Link></li>
+                                <li><Link onClick={()=>handleFilterByStock('Out-Of-Stock')}>Out-Of-Stock</Link></li>
+                                <li><Link onClick={()=>handleFilterByType('Returnable')}>Returnable</Link></li>
+                                <li><Link onClick={()=>handleFilterByType('Non-Returnable')}>Non-Returnable</Link></li>
+                            </ul>
+                        </details>
                     </div>             
                     {/* ----SORT---SECTION----*/}
                     <div className=''>

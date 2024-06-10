@@ -14,11 +14,18 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { MdBookmarkAdded } from "react-icons/md";
 import { TbChecklist } from "react-icons/tb";
 import useAuth from "../Hooks/useAuth";
+import useRequest from "../Hooks/useRequest";
+import useAllEmployeeRequests from "../Hooks/useAllEmployeeRequests";
 
 
 const Dashboard = () => {
-    const [assets] = useAssets();
+    const {assets} = useAssets();
     const {user,logOut} = useAuth();
+    const [request] = useRequest();
+    const [allEmployeeRequests] = useAllEmployeeRequests();
+
+    //toDo: get isAdmin value from the database
+    const isAdmin = true;
 
     const handleLogOut = () =>{
         logOut()
@@ -34,25 +41,30 @@ const Dashboard = () => {
             {/* Dashboard Side Bar */}
             <div className="w-40 md:w-64 min-h-screen bg-purple-200">
                 <ul className="menu p-4 uppercase">
-                            <li>
-                                <img className='w-1/2 mx-auto my-2' src="/src/assets/icons/icon.png" alt="" />
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/allAssets"><PiTreasureChestDuotone className="text-lg mr-0 md:mr-2" />Asset List ({assets.length})</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/adminHome"><MdAddCard className="text-lg mr-0 md:mr-2" /> Add an Asset</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/addItems"><VscChecklist className="text-lg mr-0 md:mr-2" /> All Requests</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/users"><FaUsers className="text-lg mr-0 md:mr-2"></FaUsers>My EMployee list</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/bookings"> <IoPersonAddSharp className="text-lg mr-0 md:mr-2" /> Add an Employee </NavLink>
-                            </li>
-                            
+                    {
+                        isAdmin ? 
+                            <>
+                                <li>
+                                    <img className='w-1/2 mx-auto my-2' src="/src/assets/icons/icon.png" alt="" />
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/allAssets"><PiTreasureChestDuotone className="text-lg mr-0 md:mr-2" />Asset List ({assets.length})</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/addAnAsset"><MdAddCard className="text-lg mr-0 md:mr-2" /> Add an Asset</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/allRequests"><VscChecklist className="text-lg mr-0 md:mr-2" /> All Requests ( {allEmployeeRequests.length} ) </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/myEmployeeList"><FaUsers className="text-lg mr-0 md:mr-2"></FaUsers>My EMployee list</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/addAnEmployee"> <IoPersonAddSharp className="text-lg mr-0 md:mr-2" /> Add an Employee </NavLink>
+                                </li>
+                            </> 
+                        :
+                        <>
                             {/* EMPLOYEE-----DASHBOARD */}
                             <div className="divider"></div>
                             <li>
@@ -62,27 +74,31 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/cart"> <FaUsers className="text-lg mr-0 md:mr-2"></FaUsers>My Team  </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/requestedAssets"> <TbChecklist className="text-xl mr-0 md:mr-2" />My Requested Assets  </NavLink>
+                                <NavLink to="/dashboard/requestedAssets"> <TbChecklist className="text-xl mr-0 md:mr-2" />My Requested Assets ( {request.length} )  </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/requestAsset"> <RiPlayListAddLine className="text-lg mr-0 md:mr-2" />Request for an asset  </NavLink>
                             </li>
+                        </>
+                    }
+                            
+                            
                             
 
                     {/* Shared Menu Options------- */}
                     <div className="divider"></div>
                     <li>
-                                <NavLink to="/dashboard/userHome"><FaHome className="text-lg mr-0 md:mr-2" ></FaHome>Home</NavLink>
+                                <NavLink to="/"><FaHome className="text-lg mr-0 md:mr-2" ></FaHome>Home</NavLink>
                             </li>
                     <li>
                         <NavLink to="/dashboard/profile"><ImProfile className="text-lg mr-0 md:mr-2" />Profile</NavLink>
                     </li>
                     <div className="divider"></div>
-                    <li className="w-1/2 mx-auto">
-                        <Link >{user?.displayName}</Link>
+                    <li className="w-2/3 mx-auto">
+                        <Link to="/dashboard/profile" >{user?.displayName}</Link>
                     </li>
-                    <li>
-                        <Link><img className="rounded-full" src={user?.photoURL} alt="" /></Link>
+                    <li className="w-2/3 mx-auto">
+                        <Link to="/dashboard/profile"><img className="rounded-full" src={user?.photoURL} alt="" /></Link>
                     </li>
                     
                     <li>

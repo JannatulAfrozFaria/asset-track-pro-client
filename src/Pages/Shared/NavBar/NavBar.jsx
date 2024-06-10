@@ -13,7 +13,7 @@ const NavBar = () => {
         <li><Link to="/"><a href="">Home</a></Link> </li>
         <li><Link to="/joinAsEmployee"><a href="">Join as Employee</a></Link> </li>
         <li><Link to="/joinAsManager"><a href="">Join as HR Manager</a></Link> </li>
-        <li><Link to="/dashboard"><a href="">Dashboard</a></Link> </li>
+        <li><Link to="/dashboard/requestedAssets"><a href="">Dashboard</a></Link> </li>
         <li><Link to="/secret"><a href="">Secret</a></Link> </li>
     </>
     return (
@@ -41,9 +41,11 @@ const NavBar = () => {
                     {
                         user? <>
                                 <Tippy content={user?.displayName} >
-                                    <div className="profile-pic w-10 rounded-full mr-3">
-                                        <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
-                                    </div>
+                                    <Link to='/dashboard/profile'>
+                                        <div className="profile-pic w-10 rounded-full mr-3">
+                                            <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
+                                        </div>
+                                    </Link>
                                 </Tippy>
                             {/* <div className="flex gap-2 mr-3">
                                 <div>{user?.displayName} </div>

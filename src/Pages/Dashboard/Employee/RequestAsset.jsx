@@ -5,14 +5,16 @@ import AssetCard from "./AssetCard";
 import { Helmet } from "react-helmet";
 
 const RequestAsset = () => {
-    const [assets] = useAssets();
+    const {assets,loading} = useAssets();
     // STATE FOR-----SEARCH-----
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState(assets);
     //to load all the Data initially when page is loaded
     useEffect(() => {
-        setSearchResults(assets); 
-      }, []);
+        if(!loading){
+            setSearchResults(assets); 
+        }
+      }, [loading]);
       // FUNCTION FOR-----SEARCH-----
     const handleSearch = () =>{
         const results = assets.filter(asset=>

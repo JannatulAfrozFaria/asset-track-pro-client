@@ -6,7 +6,7 @@ const PrivateRoute = ({children}) => {
     const {user,loading} = useAuth();
     const location = useLocation();
     if(loading){
-        return <progress className="progress w-56 text-purple-500"></progress>
+        return <progress className="progress w-56 text-purple-500 mx-auto mt-10"></progress>
     }
     if(user){
         return children;

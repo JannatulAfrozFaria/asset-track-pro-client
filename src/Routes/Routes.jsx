@@ -13,6 +13,11 @@ import Secret from "../Pages/Shared/Secret/Secret";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../Pages/Dashboard/Common/Profile";
 import RequestAsset from "../Pages/Dashboard/Employee/RequestAsset";
+import RequestedAssets from "../Pages/Dashboard/Employee/RequestedAssets";
+import MyEmployeeList from "../Pages/Dashboard/Manager/MyEmployeeList";
+import AddAnEmployee from "../Pages/Dashboard/Manager/AddAnEmployee";
+import AllRequests from "../Pages/Dashboard/Manager/AllRequests";
+import AddAnAsset from "../Pages/Dashboard/Manager/AddAnAsset";
 
   export const router = createBrowserRouter([
     {
@@ -35,10 +40,10 @@ import RequestAsset from "../Pages/Dashboard/Employee/RequestAsset";
             path: '/login',
             element: <Login></Login>
         },
-        {
-            path: '/signup',
-            element: <SignUp></SignUp>
-        },
+        // {
+        //     path: '/signup',
+        //     element: <SignUp></SignUp>
+        // },
         {
             path: 'secret',
             element: <PrivateRoute>
@@ -49,19 +54,41 @@ import RequestAsset from "../Pages/Dashboard/Employee/RequestAsset";
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute>
+                    <Dashboard></Dashboard>
+                </PrivateRoute>,
         children: [
-            //employees
-            //managers routes
+            //manager routes
             {
                 path: 'allAssets',
                 element: <AllAssets></AllAssets>
+            },
+            {
+                path: 'addAnAsset',
+                element: <AddAnAsset></AddAnAsset>
+            },
+            {
+                path: 'allRequests',
+                element: <AllRequests></AllRequests>
+            },
+            {
+                path: 'myEmployeeList',
+                element: <MyEmployeeList></MyEmployeeList>
+            },
+            {
+                path: 'addAnEmployee',
+                element: <AddAnEmployee></AddAnEmployee>
             },
             //employee routes
             {
                 path: 'requestAsset',
                 element: <RequestAsset></RequestAsset>
             },
+            {
+                path: 'requestedAssets',
+                element: <RequestedAssets></RequestedAssets>
+            },
+            //common----
             {
                 path: 'profile',
                 element: <Profile></Profile>
