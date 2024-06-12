@@ -31,7 +31,8 @@ const AssetCard = ({asset}) => {
             userName: user.displayName,
             name,type,date_added,image,
             request_date: currentDate.toISOString().split('T')[0],
-            status: 'Pending'
+            status: 'Pending',
+            approval: ''
         }
         console.log(requestedAsset);
         axiosSecure.post('/requests',requestedAsset)

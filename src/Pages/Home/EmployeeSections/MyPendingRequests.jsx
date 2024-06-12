@@ -1,17 +1,13 @@
-import { Helmet } from 'react-helmet';
-import Title from '../../../Components/Title';
-import Swal from 'sweetalert2';
-import useAxiosSecure from '../../../Hooks/useAxiosSecure';
-import useEmployee from '../../../Hooks/useEmployee';
-// import { useQuery } from '@tanstack/react-query';
+import Swal from "sweetalert2";
+import Title from "../../../Components/Title";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useRequest from "../../../Hooks/useRequest";
 
-const MyEmployeeList = () => {
-    
+const MyPendingRequests = () => {
+    const [allRequests,refetch] = useRequest();
     const axiosSecure = useAxiosSecure();
-    const [allEmployees,refetch] = useEmployee();
-    console.log(allEmployees);
-   
-    const handleRemove = item =>{
+    console.log(allRequests);
+    const handleDelete = id =>{
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -20,17 +16,17 @@ const MyEmployeeList = () => {
             cancelButtonColor: "#d33",
             cancelButtonText: "No",
             confirmButtonColor: "#3085d6",
-            confirmButtonText: "Yes, Remove!"
+            confirmButtonText: "Yes, Cancel it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.delete(`/employees/${item._id}`)
+                axiosSecure.delete(`/requests/${id}`)
                 .then(res=>{
                     console.log(res.data);
                     if(res.data.deletedCount>0){
                           refetch();
                           Swal.fire({
-                                      title: "Deleted!",
-                                      text: `Employee has been removed from your team.`,
+                                      title: "Cancelled!",
+                                      text: `Your Request has been cancelled.`,
                                       icon: "success"
                                     });
                     }
@@ -39,31 +35,29 @@ const MyEmployeeList = () => {
           });
     }
     return (
-        <div className='w-5/6 mx-auto text-center'>
-            <Helmet>
-                <title>Asset Track Pro | My  Employee List</title>
-            </Helmet>
-            <Title heading={'EMPLOYEE LIST'} subHeading={'Here is the list of employees added by you.'} ></Title>
-            <h2 className="text-2xl mb-4 text-purple-500">Total Employees: ( <span className="font-semibold">{allEmployees.length}</span> ) </h2>
+        <div className="w-5/6 mx-auto text-center my-16">
+            <Title heading={'MY PENDING REQUESTS'} subHeading={`Total Requests:${allRequests.length}`} ></Title>
+            {/* <h2 className="text-2xl mb-4 text-purple-500">Total Requests: ( <span className="font-semibold">{allRequests.length}</span> ) </h2> */}
             <div className="overflow-x-auto ">
                 <table className="table">
                     {/* head */}
                     <thead>
                     <tr>
                         <th>
-                            {<label>
+                            <label>
                                 <input type="checkbox" className="checkbox" />
-                            </label>}
+                            </label>
                         </th>
                         <th>Image</th>
-                        <th>Employee Name</th>
-                        {/* <th>Employee Type</th> */}
+                        <th>Asset Name</th>
+                        <th>Asset Type</th>
+                        <th>Request Date</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     {/* row 1 */}
-                        {allEmployees.map((item,index)=>
+                        {allRequests.map((item,index)=>
                             <tr key={item._id}>
                                 {/* SERIAL---NUMBER */}
                                 <th>
@@ -75,7 +69,7 @@ const MyEmployeeList = () => {
                                 <td>
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src={item.photo} />
+                                            <img src={item.image} />
                                         </div>
                                     </div>
                                 </td>
@@ -83,31 +77,22 @@ const MyEmployeeList = () => {
                                 <td>
                                     <div className="font-bold">{item.name}</div>
                                 </td>
-
-                                {/* EMPLOYEE----TYPE */}
-                                {/* <td></td> */}
-                                
+                                {/* ASEET----TYPE */}
+                                <td>
+                                    {item.type}
+                                </td>
+                                {/* REQUEST_DATE */}
+                                <td>{item.request_date}</td>
                                 <th>
-                                    <button onClick={()=>handleRemove(item)} className="btn btn-outline text-red-500 btn-xs">Remove From Team</button>
+                                    <button onClick={()=>handleDelete(item._id)} className="btn btn-outline text-red-500 btn-xs">Cancel</button>
                                 </th>
                             </tr>
                         )}
                     </tbody>
-                    {/* foot */}
-                    {/* <tfoot>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
-                        </tr>
-                    </tfoot> */}
-                    
                 </table>
             </div>
         </div>
     );
 };
 
-export default MyEmployeeList;
+export default MyPendingRequests;

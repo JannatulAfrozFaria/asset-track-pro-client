@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const UpgradePackage = () => {
     const {packages,loading,refetch} = usePackages();
-    console.log(packages);
+    // console.log(packages);
     return (
         <div className='w-4/5 mx-auto text-center my-16'>
              <Helmet>
@@ -39,12 +39,20 @@ const UpgradePackage = () => {
                             <p>Member Capacity: <span className='text-purple-200 font-semibold'> {pack.person_capacity}</span> </p>
                         </div>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-outline bg-purple-300 w-56">
+                            {/* <button className="btn btn-outline bg-purple-300 w-56">
                                 <Link to={`/dashboard/buyPackage/${pack._id}`} >Buy</Link>
-                            </button>
-                            <button className="btn btn-outline bg-purple-300 w-56">
+                            </button> */}
+                             {/* <button className="btn btn-outline bg-purple-300 w-56">
                                 <Link to={'/dashboard/payment'} >Payment</Link>
+                            </button> */}
+                            
+                            <button className="btn btn-outline bg-purple-300 w-56">
+                                <Link to={`/buyPackage/${pack._id}`} >Buy</Link>
                             </button>
+                           
+                            {/* <button className="btn btn-outline bg-purple-300 w-56">
+                                <Link to={'/payment'} >Payment</Link>
+                            </button> */}
                         </div>
                     </div>
                 </div>

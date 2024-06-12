@@ -4,25 +4,12 @@ import useAuth from './useAuth';
 
 
 const useEmployee = () => {
-    // const axiosSecure = useAxiosSecure();
-    // //tanstack Query
-    // const {data : allEmployees = [],refetch} = useQuery({
-    //     queryKey: ['allEmployees'],
-    //     queryFn: async()=>{
-    //         const res = await axiosSecure.get('/employees')
-    //         return res.data;
-    //     }
-    // });
-    // return [allEmployees,refetch];
-
-    //---------------------------------------------
     const axiosSecure = useAxiosSecure();
     const {user} = useAuth();
     //tanstack Query
     const {data : allEmployees = [],refetch ,loading} = useQuery({
         queryKey: ['allEmployees', user?.email],
         queryFn: async()=>{
-            // const res = await axiosSecure.get(`/employees/${user.email}`)
             const res = await axiosSecure.get('/employees')
             return res.data;
         }

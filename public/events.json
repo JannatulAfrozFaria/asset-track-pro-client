@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "event_name": "Annual Investment Conference",
+      "event_date": "2024-09-15",
+      "organizer_name": "Global Asset Management",
+      "event_venue": "New York City Convention Center",
+      "entry_ticket_price": 250,
+      "event_purpose": "Discussing the latest trends and strategies in investment management."
+    },
+    {
+      "id": 2,
+      "event_name": "Sustainable Investing Summit",
+      "event_date": "2024-10-20",
+      "organizer_name": "Eco Wealth Advisors",
+      "event_venue": "San Francisco Green Expo Center",
+      "entry_ticket_price": 150,
+      "event_purpose": "Exploring opportunities and challenges in sustainable and responsible investing."
+    },
+    {
+      "id": 3,
+      "event_name": "Real Estate Wealth Building Workshop",
+      "event_date": "2024-11-05",
+      "organizer_name": "Property Growth Partners",
+      "event_venue": "Los Angeles Business Center",
+      "entry_ticket_price": 100,
+      "event_purpose": "Teaching strategies for building wealth through real estate investments."
+    }
+  ]

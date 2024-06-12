@@ -46,10 +46,19 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
             path: '/login',
             element: <Login></Login>
         },
+        {
+            path: 'upgradePackage',
+            element: <UpgradePackage></UpgradePackage>
+        },
         // {
-        //     path: '/signup',
-        //     element: <SignUp></SignUp>
+        //     path: 'payment',
+        //     element: <Payment></Payment>
         // },
+        {
+            path: 'buyPackage/:id',
+            element: <BuyPackage></BuyPackage>,
+            loader: ({params}) =>fetch(`http://localhost:5000/packages/${params.id}`)
+        },
         {
             path: 'secret',
             element: <PrivateRoute>
@@ -97,19 +106,19 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
                             <AddAnEmployee></AddAnEmployee>
                          </AdminRoute>
             },
-            {
-                path: 'upgradePackage',
-                element: <UpgradePackage></UpgradePackage>
-            },
-            {
-                path: 'buyPackage/:id',
-                element: <BuyPackage></BuyPackage>,
-                loader: ({params}) =>fetch(`http://localhost:5000/packages/${params.id}`)
-            },
-            {
-                path: 'payment',
-                element: <Payment></Payment>
-            },
+            // {
+            //     path: 'upgradePackage',
+            //     element: <UpgradePackage></UpgradePackage>
+            // },
+            // {
+            //     path: 'buyPackage/:id',
+            //     element: <BuyPackage></BuyPackage>,
+            //     loader: ({params}) =>fetch(`http://localhost:5000/packages/${params.id}`)
+            // },
+            // {
+            //     path: 'payment',
+            //     element: <Payment></Payment>
+            // },
             //employee routes
             {
                 path: 'myTeam',

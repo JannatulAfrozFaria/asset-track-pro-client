@@ -18,6 +18,12 @@ const JoinAsManager = () => {
 
     const onSubmit = (data) => {
         console.log(data);
+        // const hrInfo ={
+        //     date_of_birth: data.date,
+        //     company_logo: data.logo,
+        //     company_name: data.company,
+        //     package_Type: data.type
+        // }
         createUser(data.email,data.password)
         .then(result=>{
             const loggedUser =  result.user;
@@ -27,15 +33,23 @@ const JoinAsManager = () => {
                 const userInfo = {
                     name: data.name,
                     email: data.email,
-                    photo: data.photoURL
+                    photo: data.photoURL,
+                    // packageType: data.type
                 }
+                // const responseToSend = {userInfo,hrInfo}
+                // axiosPublic.post('/users',responseToSend)
+
+
                 //create user entry in database
                 axiosPublic.post('/users',userInfo)
                 .then(res=>{
+                    // console.log(res)
                     if(res.data.insertedId){
                         reset();
                         Swal.fire("User created successfully!");
-                        navigate('/');
+                        // navigate('/');
+                        // navigate('/dashboard/payment');
+                        navigate('/upgradePackage');
                     }
                 })
             }).catch((error)=>{

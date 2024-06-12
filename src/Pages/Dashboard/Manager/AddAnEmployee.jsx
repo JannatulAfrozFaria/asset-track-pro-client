@@ -69,10 +69,10 @@ const AddAnEmployee = () => {
              <Helmet>
                 <title>Asset Track Pro | Add An Employee</title>
             </Helmet>
-            <Title heading={'PACKAGE DETAILS'} subHeading={'Here is the package you are using currently.'} ></Title>
+            <Title heading={'BUY OR UPGRADE package'} subHeading={'We have 3 types of packages.'} ></Title>
             <div>
                 <div>
-                    <button className="btn btn-outline bg-purple-300"><Link to='/dashboard/upgradePackage'>Upgrade Package</Link> </button>
+                    <button className="btn btn-outline bg-purple-300"><Link to='/upgradePackage'>View Packages</Link> </button>
                 </div>
             </div>
             <Title heading={'add an employee'} subHeading={'Here you can add members to your team.'} ></Title>
