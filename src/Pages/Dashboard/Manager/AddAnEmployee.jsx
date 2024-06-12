@@ -3,9 +3,14 @@ import Title from "../../../Components/Title";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useAuth from "../../../Hooks/useAuth";
+import useEmployee from "../../../Hooks/useEmployee";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const AddAnEmployee = () => {
+    const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
     const {data: users = [],refetch} = useQuery({
         queryKey: ['users'],
@@ -34,27 +39,28 @@ const AddAnEmployee = () => {
         })
     }
 
-    const handleAddAnEmployee = (id,photo,email,name)=>{
+    const handleAddAnEmployee = (user)=>{
         const addedUser = {
-            userId: id,
-            photo: photo,
-            email: email,
-            name: name
+            userId: user._id,
+            photo: user.photo,
+            email: user.email,
+            name: user.name
         }
         console.log(addedUser);
         axiosSecure.post('/employees',addedUser)
         .then(res=>{
             console.log(res.data)
             if(res.data.insertedId){
+                //refetch employee list
+                refetch();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: ` ${name} has been added to your team!`,
+                    title: ` ${user.name} has been added to your team!`,
                     showConfirmButton: false,
                     timer: 1500
                   });
-                //refetch requested Assets List
-                  refetch();
+                
             }
         })
     }
@@ -64,8 +70,13 @@ const AddAnEmployee = () => {
                 <title>Asset Track Pro | Add An Employee</title>
             </Helmet>
             <Title heading={'PACKAGE DETAILS'} subHeading={'Here is the package you are using currently.'} ></Title>
+            <div>
+                <div>
+                    <button className="btn btn-outline bg-purple-300"><Link to='/dashboard/upgradePackage'>Upgrade Package</Link> </button>
+                </div>
+            </div>
             <Title heading={'add an employee'} subHeading={'Here you can add members to your team.'} ></Title>
-            <h2 className="text-2xl mb-4 text-purple-500">Total Employees: {users.length} </h2>
+            <h2 className="text-2xl mb-4 text-purple-500">Total Employees: {users.length -1 } </h2>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -80,8 +91,11 @@ const AddAnEmployee = () => {
                     </thead>
                     <tbody>
                     {/* row 1 */}
-                        {users.map((user)=>
-                            <tr key={user._id}>
+                        {users.map((usr)=>{
+                            if(usr.email === user.email){
+                                return
+                            }
+                            return <tr key={usr._id}>
                             <th>
                             <label>
                                 <input type="checkbox" className="checkbox" />
@@ -91,28 +105,29 @@ const AddAnEmployee = () => {
                             <div className="flex items-center gap-3">
                                 <div className="avatar">
                                     <div className="mask mask-squircle w-12 h-12">
-                                        <img src={user.photo} />
+                                        <img src={usr.photo} />
                                     </div>
                                 </div>
                             </div>
                             </td>
                             <td>
-                                {user.name}
+                                {usr.name}
                             </td>
                             {/*     -------EXTRA-----BUTTON */}
                             <td>
                                 {
-                                    user.role === 'HR' ? <p className="text-purple-500 font-semibold">HR Manager</p> :
-                                    <button onClick={()=>handleMakeHR(user)
+                                    usr.role === 'HR' ? <p className="text-purple-500 font-semibold">HR Manager</p> :
+                                    <button onClick={()=>handleMakeHR(usr)
                                     } className="btn btn-base btn-lg md:btn-xs">Make HR Manager</button>
                                 }
                             </td>
                             {/* -----EXTRA---BUTTON----ENDS */}
                             <th>
-                                <button onClick={()=>handleAddAnEmployee(user._id,user.photo,user.email,user.name)
+                                <button onClick={()=>handleAddAnEmployee(usr)
                                 } className="btn btn-base btn-lg md:btn-xs">Add to Team</button>
                             </th>
-                        </tr>
+                            </tr>
+                        } 
                         )}
                     </tbody>
                     {/* foot */}

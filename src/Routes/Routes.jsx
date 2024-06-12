@@ -18,6 +18,12 @@ import MyEmployeeList from "../Pages/Dashboard/Manager/MyEmployeeList";
 import AddAnEmployee from "../Pages/Dashboard/Manager/AddAnEmployee";
 import AllRequests from "../Pages/Dashboard/Manager/AllRequests";
 import AddAnAsset from "../Pages/Dashboard/Manager/AddAnAsset";
+import MyTeam from "../Pages/Dashboard/Employee/MyTeam";
+import AdminRoute from "./AdminRoute";
+import UpdateAnAsset from "../Pages/Dashboard/Manager/UpdateAnAsset";
+import UpgradePackage from "../Pages/Dashboard/Manager/UpgradePackage"
+import BuyPackage from "../Pages/Dashboard/Manager/BuyPackage";
+import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
 
   export const router = createBrowserRouter([
     {
@@ -65,7 +71,17 @@ import AddAnAsset from "../Pages/Dashboard/Manager/AddAnAsset";
             },
             {
                 path: 'addAnAsset',
-                element: <AddAnAsset></AddAnAsset>
+                element: <AdminRoute>
+                            <AddAnAsset></AddAnAsset>
+                        </AdminRoute>
+            },
+            {
+                path: 'updateAsset/:id',
+                element: <AdminRoute>
+                            <UpdateAnAsset></UpdateAnAsset>
+                         </AdminRoute>,
+                loader: ({params}) =>fetch(`http://localhost:5000/assets/${params.id}`)
+                         
             },
             {
                 path: 'allRequests',
@@ -77,9 +93,28 @@ import AddAnAsset from "../Pages/Dashboard/Manager/AddAnAsset";
             },
             {
                 path: 'addAnEmployee',
-                element: <AddAnEmployee></AddAnEmployee>
+                element: <AdminRoute>
+                            <AddAnEmployee></AddAnEmployee>
+                         </AdminRoute>
+            },
+            {
+                path: 'upgradePackage',
+                element: <UpgradePackage></UpgradePackage>
+            },
+            {
+                path: 'buyPackage/:id',
+                element: <BuyPackage></BuyPackage>,
+                loader: ({params}) =>fetch(`http://localhost:5000/packages/${params.id}`)
+            },
+            {
+                path: 'payment',
+                element: <Payment></Payment>
             },
             //employee routes
+            {
+                path: 'myTeam',
+                element: <MyTeam></MyTeam>
+            },
             {
                 path: 'requestAsset',
                 element: <RequestAsset></RequestAsset>

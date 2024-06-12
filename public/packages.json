@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Bronze",
+    "person_capacity": 5,
+    "price": 5,
+    "image": "https://i.ibb.co/8Y7h4Y7/pink.png"
+  },
+  {
+    "name": "Silver",
+    "person_capacity": 10,
+    "price": 8,
+    "image": "https://i.ibb.co/zxYR0Dd/liquid-purple.jpg"
+  },
+  {
+    "name": "Gold",
+    "person_capacity": 15,
+    "price": 15,
+    "image": "https://i.ibb.co/vLfNq4w/purple-water.jpg"
+  }
+]

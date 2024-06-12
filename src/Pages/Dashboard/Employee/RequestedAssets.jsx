@@ -27,7 +27,7 @@ const RequestedAssets = () => {
                     if(res.data.deletedCount>0){
                           refetch();
                           Swal.fire({
-                                      title: "Deleted!",
+                                      title: "Cancelled!",
                                       text: `Your Request has been cancelled.`,
                                       icon: "success"
                                     });

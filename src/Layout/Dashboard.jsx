@@ -16,6 +16,7 @@ import { TbChecklist } from "react-icons/tb";
 import useAuth from "../Hooks/useAuth";
 import useRequest from "../Hooks/useRequest";
 import useAllEmployeeRequests from "../Hooks/useAllEmployeeRequests";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Dashboard = () => {
@@ -25,7 +26,9 @@ const Dashboard = () => {
     const [allEmployeeRequests] = useAllEmployeeRequests();
 
     //toDo: get isAdmin value from the database
-    const isAdmin = true;
+    // const isHR = true;
+    const [isHR] = useAdmin();
+
 
     const handleLogOut = () =>{
         logOut()
@@ -42,7 +45,7 @@ const Dashboard = () => {
             <div className="w-40 md:w-64 min-h-screen bg-purple-200">
                 <ul className="menu p-4 uppercase">
                     {
-                        isAdmin ? 
+                        isHR ? 
                             <>
                                 <li>
                                     <img className='w-1/2 mx-auto my-2' src="/src/assets/icons/icon.png" alt="" />
@@ -51,13 +54,13 @@ const Dashboard = () => {
                                     <NavLink to="/dashboard/allAssets"><PiTreasureChestDuotone className="text-lg mr-0 md:mr-2" />Asset List ({assets.length})</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/addAnAsset"><MdAddCard className="text-lg mr-0 md:mr-2" /> Add an Asset</NavLink>
+                                    <NavLink to="/dashboard/AddAnAsset"><MdAddCard className="text-lg mr-0 md:mr-2" /> Add an Asset</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/allRequests"><VscChecklist className="text-lg mr-0 md:mr-2" /> All Requests ( {allEmployeeRequests.length} ) </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/myEmployeeList"><FaUsers className="text-lg mr-0 md:mr-2"></FaUsers>My EMployee list</NavLink>
+                                    <NavLink to="/dashboard/myEmployeeList"><FaUsers className="text-lg mr-0 md:mr-2"></FaUsers>My Employee list</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/addAnEmployee"> <IoPersonAddSharp className="text-lg mr-0 md:mr-2" /> Add an Employee </NavLink>
@@ -68,16 +71,16 @@ const Dashboard = () => {
                             {/* EMPLOYEE-----DASHBOARD */}
                             <div className="divider"></div>
                             <li>
-                                <NavLink to="/dashboard/reservation"><FaCalendar className="text-lg mr-0 md:mr-2" ></FaCalendar> My Assets</NavLink>
+                                <NavLink to="/dashboard/requestedAssets"> <FaCalendar className="text-xl mr-0 md:mr-2" ></FaCalendar>My Assets ( {request.length} )</NavLink>
+                            </li>
+                            {/* <li>
+                                <NavLink to="/dashboard/reservation"><TbChecklist className="text-lg mr-0 md:mr-2" /> My Assets</NavLink>
+                            </li> */}
+                            <li>
+                                <NavLink to="/dashboard/myTeam"> <FaUsers className="text-lg mr-0 md:mr-2"></FaUsers>My Team</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/cart"> <FaUsers className="text-lg mr-0 md:mr-2"></FaUsers>My Team  </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/requestedAssets"> <TbChecklist className="text-xl mr-0 md:mr-2" />My Requested Assets ( {request.length} )  </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dashboard/requestAsset"> <RiPlayListAddLine className="text-lg mr-0 md:mr-2" />Request for an asset  </NavLink>
+                                <NavLink to="/dashboard/requestAsset"> <RiPlayListAddLine className="text-lg mr-0 md:mr-2" />Request for an asset</NavLink>
                             </li>
                         </>
                     }

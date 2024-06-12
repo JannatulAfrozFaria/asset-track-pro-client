@@ -1,4 +1,3 @@
-import React from 'react';
 import Title from '../../../Components/Title';
 import Cover from '../../../Components/Cover';
 import card1 from '../../../assets/About/pink.png';

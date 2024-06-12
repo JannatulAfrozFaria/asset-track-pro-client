@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Tippy from "@tippyjs/react";
+// import useAdmin from "../../../Hooks/useAdmin";
 
 const NavBar = () => {
     const {user,logOut} = useAuth();
+    // const [isHR] = useAdmin();
     const handleLogOut = () =>{
         logOut()
         .then(()=>{})
@@ -13,7 +15,13 @@ const NavBar = () => {
         <li><Link to="/"><a href="">Home</a></Link> </li>
         <li><Link to="/joinAsEmployee"><a href="">Join as Employee</a></Link> </li>
         <li><Link to="/joinAsManager"><a href="">Join as HR Manager</a></Link> </li>
-        <li><Link to="/dashboard/requestedAssets"><a href="">Dashboard</a></Link> </li>
+        <li><Link to="/dashboard/profile"><a href="">Dashboard</a></Link> </li>
+        {/* <li>
+            {
+                isHR? <><Link to="/dashboard/allAssets"><a href="">Dashboard</a></Link></>
+                : <><Link to="/dashboard/requestAsset"><a href="">Dashboard</a></Link></>
+            }
+        </li> */}
         <li><Link to="/secret"><a href="">Secret</a></Link> </li>
     </>
     return (

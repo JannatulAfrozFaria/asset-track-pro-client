@@ -6,21 +6,16 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+
 const JoinAsManager = () => {
     const axiosPublic = useAxiosPublic();
-
     const {createUser,updateUserProfile} = useAuth();
     const {register, handleSubmit, watch, reset, formState: { errors }} = useForm();
     const navigate =  useNavigate();
-    // const handleJoin = (event) =>{
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const name = form.name.value;
-    //     const email = form.email.value;
-    //     const password =  form.password.value;
-    //     const date = form.date.value;
-    //     console.log(name,email,password,date);
-    // }
+
+
     const onSubmit = (data) => {
         console.log(data);
         createUser(data.email,data.password)
@@ -29,10 +24,6 @@ const JoinAsManager = () => {
             console.log(loggedUser);
             updateUserProfile(data.name,data.photoURL)
             .then(()=>{
-                // console.log('user profile info updated')
-                // reset();
-                // Swal.fire("User created successfully!");
-                // navigate('/');
                 const userInfo = {
                     name: data.name,
                     email: data.email,
@@ -73,7 +64,7 @@ const JoinAsManager = () => {
                                     <label className="label">
                                         <span className="label-text">Full Name</span>
                                     </label>
-                                    <input {...register("name", { required: true })} type="text" name="name" placeholder="Full Name" className="input input-bordered" />
+                                    <input {...register("name", { required: true })} type="text" placeholder="Full Name" className="input input-bordered" />
                                     {errors.name && <span className="text-red-500" >User Name is required</span>}
                                 </div>
                                 {/* ------EMAIL----- */}
@@ -102,17 +93,14 @@ const JoinAsManager = () => {
                                     {errors.password?.type ==='minLength' && <p role="alert" className='text-red-600'>Password must be 6 characters</p>}
                                     {errors.password?.type ==='maxLength' && <p role="alert" className='text-red-600'>Password must be within 20 characters</p>}
                                     {errors.password?.type ==='pattern' && <p role="alert" className='text-red-600'>Password must have one uppercase, one lowercase, one special character and one number</p>}
-
-                                    {/* <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    </label> */}
                                 </div>
                                 {/* Date Of Birth */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Date of Birth</span>
                                     </label>
-                                    <input type="date" name="date" placeholder="Date Of Birth" className="input input-bordered" required />
+                                    <input {...register("date", { required: true })} type="date" placeholder="Date Of Birth" className="input input-bordered" required />
+                                    {errors.date && <span className="text-red-500" >Date of Birth is required</span>}
                                 </div>
                             </div>
                             {/* COlumn-------2 */}
@@ -130,21 +118,28 @@ const JoinAsManager = () => {
                                     <label className="label">
                                         <span className="label-text">Company Name</span>
                                     </label>
-                                    <input type="email" placeholder="Company Name" className="input input-bordered" required />
+                                    <input {...register("company", { required: true })} type="text" placeholder="Company Name" className="input input-bordered" required />
+                                    {errors.photoURL && <span className="text-red-500" >Company Name is required</span>}
                                 </div>
                                 {/* Company Logo */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Company Logo</span>
                                     </label>
-                                    <input type="email" placeholder="Logo" className="input input-bordered" required />
+                                    <input {...register("logo", { required: true })} type="text" placeholder="Company Logo URL" className="input input-bordered" required />
                                 </div>
-                                {/* Select */}
+                                {/* Select------PACKAGE */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Select a package</span>
                                     </label>
-                                    <input type="text" placeholder="select a package" className="input input-bordered" required />
+                                    {/* <input type="text" placeholder="select a package" className="input input-bordered" required /> */}
+                                    <select defaultValue="default" {...register("type")} className="select select-bordered w-full max-w-xs">
+                                        <option disabled value="default">Select Package</option>
+                                        <option value="Bronze Package">Bronze Package</option>
+                                        <option value="Silver Package">Silver Package</option>
+                                        <option value="Gold Package">Gold Package</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

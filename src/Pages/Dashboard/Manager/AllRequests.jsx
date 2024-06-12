@@ -9,14 +9,6 @@ import { useEffect, useState } from "react";
 
 const AllRequests = () => {
     const axiosSecure = useAxiosSecure();
-    //tanstack Query
-    // const {data : allEmployeeRequests = [],refetch} = useQuery({
-    //     queryKey: ['allEmployeeRequests'],
-    //     queryFn: async()=>{
-    //         const res = await axiosSecure.get('requests')
-    //         return res.data;
-    //     }
-    // });
     const [allEmployeeRequests,refetch] = useAllEmployeeRequests();
     console.log(allEmployeeRequests);
 
@@ -30,9 +22,10 @@ const AllRequests = () => {
     const handleApprove = (item) =>{
         axiosSecure.patch(`/requests/${item._id}`)
         .then(res=>{
+            console.log(res);
             console.log(res.data)
             if(res.data.modifiedCount>0){
-                refetch();
+                refetch();  //-------comment-----
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -95,10 +88,14 @@ const AllRequests = () => {
     return (
         <div className="w-5/6 mx-auto text-center my-16">
             <Helmet>
-                <title>Asset Track Pro | Requested Assets</title>
+                <title>Asset Track Pro | All Requested Assets</title>
             </Helmet>
             <Title heading={'All Requested Assets'} subHeading={'Here is the list of assets requested by all the employees'} ></Title>
-            <h2 className="text-2xl mb-4 text-purple-500">Total Requests: ( <span className="font-semibold">{allEmployeeRequests.length}</span> ) </h2>
+            <h2 className="text-2xl mb-4 text-purple-500">Total Requests: ( 
+                <span className="font-semibold">
+                    {allEmployeeRequests.length}
+                    {/* {employeeList.length} */}
+                </span> ) </h2>
             <div className="overflow-x-auto ">
                 <table className="table">
                     {/* head */}
@@ -122,7 +119,9 @@ const AllRequests = () => {
                     </thead>
                     <tbody>
                     {/* row 1 */}
-                        {allEmployeeRequests.map((item,index)=>
+                        {
+                        allEmployeeRequests.map((item,index)=>
+                            // employeeList.map((item,index)=>
                             <tr key={item._id}>
                                 {/* SERIAL---NUMBER */}
                                 <th>
@@ -142,9 +141,9 @@ const AllRequests = () => {
                                 {/* REQUEST_DATE */}
                                 <td>{item.request_date}</td>
                                 {/* APPROVAL DATE */}
-                                <td>0000/00/00</td>
+                                <td></td>
                                 {/* ----STATUS------ */}
-                                <td className="text-orange-400 font-semibold">Pending</td>
+                                <td className="text-orange-400 font-semibold">{item.status}</td>
                                 <th>
                                     {item.approval_date? <p className="text-purple-400 font-semibold">Approved</p> :
                                     <button onClick={()=>handleApprove(item)} className="btn btn-base btn-xs">Approve</button>

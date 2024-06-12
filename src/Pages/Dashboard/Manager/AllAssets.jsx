@@ -4,18 +4,15 @@ import useAssets from '../../../Hooks/useAssets';
 import Asset from './Asset';
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
 const AllAssets = () => {
     const {assets,loading} = useAssets();
-    // console.log(assets);
 
     // STATE FOR-----SEARCH-----
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState(assets);
-
-    //STATE FOR-----SORT------
-    // const [assetList,setAssetList] = useState(assets);
 
     //to load all the Data initially when page is loaded
     useEffect(() => {
@@ -71,6 +68,9 @@ const AllAssets = () => {
 
     return (
         <div className='w-4/5 mx-auto text-center my-16'>
+            <Helmet>
+                <title>Asset Track Pro | All Assets</title>
+            </Helmet>
             <Title heading={'ASSET LIST'} subHeading={'All the Returnable and Non-Returnable Assets are listed here.'} ></Title>
             <h2 className="text-2xl mb-4 text-purple-500">Total Assets: {assets.length} </h2>
             {/* SECTION------*/}
@@ -94,14 +94,14 @@ const AllAssets = () => {
                             <summary className="btn bg-purple-200 w-28 md:w-36">Filter <IoIosArrowDown /></summary>
                             <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                                 <li><Link onClick={()=>handleFilterByStock('Available')}>Available</Link></li>
-                                <li><Link onClick={()=>handleFilterByStock('Out-Of-Stock')}>Out-Of-Stock</Link></li>
+                                <li><Link onClick={()=>handleFilterByStock('Out-of-Stock')}>Out-of-Stock</Link></li>
                                 <li><Link onClick={()=>handleFilterByType('Returnable')}>Returnable</Link></li>
                                 <li><Link onClick={()=>handleFilterByType('Non-Returnable')}>Non-Returnable</Link></li>
                             </ul>
                         </details>
                     </div>             
                     {/* ----SORT---SECTION----*/}
-                    <div className=''>
+                    <div >
                         <div>
                             <div className="dropdown dropdown-bottom dropdown-end">
                             <div tabIndex={0} role="button " className="btn bg-purple-200 w-28 md:w-36">Sort  <IoIosArrowDown /> </div>

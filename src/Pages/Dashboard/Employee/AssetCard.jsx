@@ -31,6 +31,7 @@ const AssetCard = ({asset}) => {
             userName: user.displayName,
             name,type,date_added,image,
             request_date: currentDate.toISOString().split('T')[0],
+            status: 'Pending'
         }
         console.log(requestedAsset);
         axiosSecure.post('/requests',requestedAsset)
@@ -73,7 +74,7 @@ const AssetCard = ({asset}) => {
                     {/* <button onClick={handleRequest} className="btn bg-purple-200 btn-outline btn-sm w-24">Request</button> */}
 
                     {/* MODAL------ */}
-                    <button className="btn bg-purple-200 btn-outline btn-sm w-24" onClick={()=>document.querySelector(`[data-asset-name=${name}]`).showModal()}>Request</button>
+                    <button className="btn bg-purple-200 btn-outline btn-sm w-24" onClick={()=>document.querySelector(`[data-asset-name="${name}"]`).showModal()}>Request</button>
                     <dialog data-asset-name ={name} className="modal modal-bottom sm:modal-middle">
                         <div className="modal-box">
                             <h3 className="font-bold text-lg text-purple-500">Are You Sure?</h3>
