@@ -57,7 +57,7 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
         {
             path: 'buyPackage/:id',
             element: <BuyPackage></BuyPackage>,
-            loader: ({params}) =>fetch(`http://localhost:5000/packages/${params.id}`)
+            loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/packages/${params.id}`)
         },
         {
             path: 'secret',
@@ -89,7 +89,7 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
                 element: <AdminRoute>
                             <UpdateAnAsset></UpdateAnAsset>
                          </AdminRoute>,
-                loader: ({params}) =>fetch(`http://localhost:5000/assets/${params.id}`)
+                loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/assets/${params.id}`)
                          
             },
             {
@@ -113,7 +113,7 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
             // {
             //     path: 'buyPackage/:id',
             //     element: <BuyPackage></BuyPackage>,
-            //     loader: ({params}) =>fetch(`http://localhost:5000/packages/${params.id}`)
+            //     loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/packages/${params.id}`)
             // },
             // {
             //     path: 'payment',

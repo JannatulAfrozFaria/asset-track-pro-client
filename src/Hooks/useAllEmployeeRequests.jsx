@@ -24,7 +24,7 @@ const useAllEmployeeRequests = () => {
     // const[loading,setLoading] = useState(true)
     // useEffect(()=>{
     //     setLoading(true)
-    //     fetch('http://localhost:5000/requests')
+    //     fetch('https://asset-track-pro-server.vercel.app/requests')
     //     .then(res=> res.json())
     //     .then(data=>{
     //         setAllEmployeeRequests(data);
