@@ -7,7 +7,7 @@ const useAssets = () => {
     // const[loading,setLoading] = useState(true)
     // useEffect(()=>{
     //     setLoading(true)
-    //     fetch('https://asset-track-pro-server.vercel.app/assets')
+    //     fetch('http://localhost:5000/assets')
     //     .then(res=> res.json())
     //     .then(data=>{
     //         setAssets(data);

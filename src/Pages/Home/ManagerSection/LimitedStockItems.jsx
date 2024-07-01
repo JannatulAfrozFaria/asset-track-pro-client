@@ -22,8 +22,8 @@ const LimitedStockItems = () => {
                         <div className="card-body">
                             <h2 className="card-title">
                             {asset.name}
-                                <div className="badge badge-lg pb-1 bg-purple-600 text-white ">Quantity: {asset.quantity}</div>
                             </h2>
+                            <div className=" py-1 px-3 rounded-md  text-left bg-purple-200 text-purple-600">Quantity: {asset.quantity}</div>
                         </div>
                     </div>
                 )}

@@ -1,7 +1,7 @@
 import { FaBars, FaBook, FaCalendar, FaHome, FaMailBulk, FaUser, FaUsers, FaUtensils, FaWallet } from "react-icons/fa";
 import { FaBookBookmark, FaShop } from "react-icons/fa6";
 import { IoCart } from "react-icons/io5";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import useAssets from "../Hooks/useAssets";
 import { PiTreasureChestDuotone } from "react-icons/pi";
 import { MdAddCard } from "react-icons/md";
@@ -28,12 +28,14 @@ const Dashboard = () => {
     //toDo: get isAdmin value from the database
     // const isHR = true;
     const [isHR] = useAdmin();
-
+    const navigate = useNavigate();
 
     const handleLogOut = () =>{
         logOut()
         .then(()=>{})
         .catch(error=>console.log(error))
+        navigate('/login')
+        
     }
     return (
         <div className="flex">

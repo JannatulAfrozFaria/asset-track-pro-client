@@ -24,6 +24,7 @@ import UpdateAnAsset from "../Pages/Dashboard/Manager/UpdateAnAsset";
 import UpgradePackage from "../Pages/Dashboard/Manager/UpgradePackage"
 import BuyPackage from "../Pages/Dashboard/Manager/BuyPackage";
 import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
+import UpdateProfile from "../Pages/Dashboard/Common/UpdateProfile";
 
   export const router = createBrowserRouter([
     {
@@ -57,13 +58,7 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
         {
             path: 'buyPackage/:id',
             element: <BuyPackage></BuyPackage>,
-            loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/packages/${params.id}`)
-        },
-        {
-            path: 'secret',
-            element: <PrivateRoute>
-                        <Secret></Secret>
-                    </PrivateRoute>
+            loader: ({params}) =>fetch(`http://localhost:5000/packages/${params.id}`)
         }
     ]
     },
@@ -89,7 +84,7 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
                 element: <AdminRoute>
                             <UpdateAnAsset></UpdateAnAsset>
                          </AdminRoute>,
-                loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/assets/${params.id}`)
+                loader: ({params}) =>fetch(`http://localhost:5000/assets/${params.id}`)
                          
             },
             {
@@ -106,19 +101,6 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
                             <AddAnEmployee></AddAnEmployee>
                          </AdminRoute>
             },
-            // {
-            //     path: 'upgradePackage',
-            //     element: <UpgradePackage></UpgradePackage>
-            // },
-            // {
-            //     path: 'buyPackage/:id',
-            //     element: <BuyPackage></BuyPackage>,
-            //     loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/packages/${params.id}`)
-            // },
-            // {
-            //     path: 'payment',
-            //     element: <Payment></Payment>
-            // },
             //employee routes
             {
                 path: 'myTeam',
@@ -136,6 +118,12 @@ import Payment from "../Pages/Dashboard/Manager/Payment/Payment";
             {
                 path: 'profile',
                 element: <Profile></Profile>
+            },
+            {
+                // path: 'updateProfile/:email',
+                path: 'updateProfile',
+                element: <UpdateProfile></UpdateProfile>,
+                // loader: ({params}) =>fetch(`http://localhost:5000/updateProfile/${params.email}`)
             }
         ]
     }

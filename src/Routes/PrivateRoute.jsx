@@ -12,9 +12,14 @@ const PrivateRoute = ({children}) => {
                 </div>
     }
     if(user){
+        console.log('user found', user);
         return children;
     }
+    console.log('user not found', user);
     return <Navigate to="/login" state={{from: location}} replace ></Navigate>
+    
+    // return <div><h2>AJVXSVCASVCHSD</h2></div>
+    // return <Navigate to="/" state={{from: location}} replace ></Navigate>
         
 };
 

@@ -16,13 +16,6 @@ const NavBar = () => {
         <li><Link to="/joinAsEmployee"><a href="">Join as Employee</a></Link> </li>
         <li><Link to="/joinAsManager"><a href="">Join as HR Manager</a></Link> </li>
         <li><Link to="/dashboard/profile"><a href="">Dashboard</a></Link> </li>
-        {/* <li>
-            {
-                isHR? <><Link to="/dashboard/allAssets"><a href="">Dashboard</a></Link></>
-                : <><Link to="/dashboard/requestAsset"><a href="">Dashboard</a></Link></>
-            }
-        </li> */}
-        <li><Link to="/secret"><a href="">Secret</a></Link> </li>
     </>
     return (
         <>

@@ -2,52 +2,53 @@ import Banner from './Banner';
 import About from './About/About';
 import Packages from './Packages/Packages';
 import { Helmet } from 'react-helmet';
-import useAuth from '../../Hooks/useAuth';
-import useAdmin from '../../Hooks/useAdmin';
-import PendingRequests from './ManagerSection/PendingRequests';
-import LimitedStockItems from './ManagerSection/LimitedStockItems';
+import RelevantSection from './RelevantSection';
+// import useAuth from '../../Hooks/useAuth';
+// import useAdmin from '../../Hooks/useAdmin';
+
 import MyPendingRequests from './EmployeeSections/MyPendingRequests';
 import Events from './EmployeeSections/Events';
-import PieChart from './ManagerSection/PieChart';
+
+import PendingRequests from './ManagerSection/PendingRequests';
+import LimitedStockItems from './ManagerSection/LimitedStockItems';
+import PieChartDisplay from './ManagerSection/PieChartDisplay';
+import useAdmin from '../../Hooks/useAdmin';
+import useAuth from '../../Hooks/useAuth';
+import TopMostRequestedItems from './ManagerSection/TopMostRequestedItems';
+import ClockSection from './ManagerSection/ClockSection';
+import NoticeSection from './ManagerSection/NoticeSection';
 
 const Home = () => {
-    // const {user} = useAuth();
-    // const [isHR,isHRLoading] = useAdmin();
+    const {user} = useAuth();
+    // console.log(user);
+    const [isHR] = useAdmin();
+    // console.log(isHR);
     return (
         <div>
             <Helmet>
                 <title>Asset Track Pro | Home</title>
             </Helmet>
             <Banner></Banner>
-             {/* {user ?
+            {
+                isHR?
+                <>
+                  <PendingRequests></PendingRequests>
+                  <TopMostRequestedItems></TopMostRequestedItems>
+                  <LimitedStockItems></LimitedStockItems>
+                  <PieChartDisplay></PieChartDisplay>
+                  <ClockSection></ClockSection>
+                  <NoticeSection></NoticeSection>
+                </>
+                : user?
                 <>
                     <MyPendingRequests></MyPendingRequests>
                     <Events></Events>
                 </>
-                : isHR ? 
-                <div>
-                    <PendingRequests></PendingRequests>
-                    <LimitedStockItems></LimitedStockItems>
-                    <PieChart></PieChart>
-                    <Events></Events>
-                </div>
-                : 
-                <>
-                    <About></About>
-                    <Packages></Packages>
-                </>
-             } */}
+                :
+                <></>
+            }
 
-
-             {/* EMPLOYEE----------- */}
-             <MyPendingRequests></MyPendingRequests>
-             <Events></Events>
-             {/* HR_____MANAGER------- */}
-             <PendingRequests></PendingRequests>
-             <LimitedStockItems></LimitedStockItems>
-             <PieChart></PieChart>
-             <Events></Events>
-             {/* general------ */}
+            {/* GENERAL------------------ */}
             <About></About>
             <Packages></Packages>
         </div>

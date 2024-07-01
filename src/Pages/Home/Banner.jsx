@@ -1,6 +1,8 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from "react-router-dom";
+import bg1 from '../../assets/About/black-blue-purple.jpg'
+import bg2 from '../../assets/About/feather-1.jpg'
 
 const Banner = () => {
     return (
@@ -18,7 +20,7 @@ const Banner = () => {
                               text-white font-bold bg-purple-700">Join As HR Manger</button>
                         </Link>
                     </div>
-                    <img  src="/src/assets/About/black-blue-purple.jpg" />
+                    <img  src={bg1} />
                 </div>
                 <div>
                    <div className="absolute top-1/4 left-1/5 mx-auto ">
@@ -27,7 +29,7 @@ const Banner = () => {
                             <button className="btn w-1/3 mx-auto btn-base">Join As Employee</button>
                         </Link>
                     </div>
-                    <img  src="/src/assets/About/feather-1.jpg"  />
+                    <img  src={bg2}  />
                     {/* <p className="legend">Legend 2</p> */}
                 </div>
             </Carousel>

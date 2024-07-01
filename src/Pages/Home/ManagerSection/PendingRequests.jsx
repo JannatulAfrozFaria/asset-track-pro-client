@@ -2,42 +2,20 @@ import { Helmet } from "react-helmet";
 import Title from "../../../Components/Title";
 import useAllEmployeeRequests from "../../../Hooks/useAllEmployeeRequests";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const PendingRequests = () => {
     const axiosSecure = useAxiosSecure();
     const [allEmployeeRequests,refetch] = useAllEmployeeRequests();
-    console.log(allEmployeeRequests);
+    // console.log(allEmployeeRequests);
+    const arrayOfFiveRequests = allEmployeeRequests.slice(0, 5);
+    // console.log(arrayOfFiveRequests);
 
     //picking the current date and setting in state
     // const [currentDate, setCurrentDate] = useState(new Date());
     // useEffect(() => {
     //     setCurrentDate(new Date());
     // }, []);
-
-    //handle---APPROVE----FUNCTION
-    // const handleApprove = (item) =>{
-    //     axiosSecure.patch(`/requests/${item._id}`)
-    //     .then(res=>{
-    //         console.log(res);
-    //         console.log(res.data)
-    //         if(res.data.modifiedCount>0){
-    //             refetch();  //-------comment-----
-    //             Swal.fire({
-    //                 position: "top-end",
-    //                 icon: "success",
-    //                 title: `Request for ${item.name} is Approved!`,
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //               });
-    //         }
-    //     })
-
-        
-    //     const approvalDate = {
-    //         approval_date: currentDate.toISOString().split('T')[0],
-    //     }
-    //     console.log(approvalDate)
-    // }
 
     // handle REJECT---- Function
     const handleReject = id =>{
@@ -67,16 +45,16 @@ const PendingRequests = () => {
             }
           });
     }
+
     return (
         <div className="w-5/6 mx-auto text-center my-16">
             {/* <Helmet>
                 <title>Asset Track Pro | All Requested Assets</title>
             </Helmet> */}
-            <Title heading={'PENDING REQUESTS'} subHeading={'Here is the list of  pending asset requests by all the employees'} ></Title>
-            <h2 className="text-2xl mb-4 text-purple-500">Total Requests: ( 
-                <span className="font-semibold">
-                    {allEmployeeRequests.length}
-                </span> ) </h2>
+            <Title heading={'PENDING REQUESTS'} subHeading={'Asset requests made by the employees'} ></Title>
+            <Link className="text-xl mb-12 text-purple-600 btn border-0 border-b-4 rounded-md border-purple-600" to="/dashboard/allRequests">
+                <a href="">View All Requests</a>
+            </Link>
             <div className="overflow-x-auto ">
                 <table className="table">
                     {/* head */}
@@ -99,7 +77,7 @@ const PendingRequests = () => {
                     <tbody>
                     {/* row 1 */}
                         {
-                        allEmployeeRequests.map((item,index)=>
+                        arrayOfFiveRequests.map((item,index)=>
                             // employeeList.map((item,index)=>
                             <tr key={item._id}>
                                 {/* SERIAL---NUMBER */}
@@ -120,7 +98,10 @@ const PendingRequests = () => {
                                 {/* REQUEST_DATE */}
                                 <td>{item.request_date}</td>
                                 {/* ----STATUS------ */}
-                                <td className="text-orange-400 font-semibold">{item.status}</td>
+                                <td className={item.status === 'Pending'?
+                                    "text-orange-400 font-semibold"
+                                    : "text-purple-500 font-semibold"
+                                 }>{item.status}</td>
                                 <th>
                                     <button onClick={()=>handleReject(item._id)} className="btn btn-outline text-red-500 btn-xs">Reject</button>
                                 </th>

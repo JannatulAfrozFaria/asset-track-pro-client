@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 const AllRequests = () => {
     const axiosSecure = useAxiosSecure();
     const [allEmployeeRequests,refetch] = useAllEmployeeRequests();
+    // const [requestList,setRequestList] = useState(allEmployeeRequests);
     console.log(allEmployeeRequests);
 
     //picking the current date and setting in state
@@ -23,15 +24,16 @@ const AllRequests = () => {
     console.log(approvalDate)
     //handle---APPROVE----FUNCTION
     const handleApprove = (item) =>{
-        axiosSecure.patch(`/requests/${item._id}`)
+        axiosSecure.patch(`/approve/${item._id}`)
         .then(res=>{
             if(item.approve){
                 console.log(item.approve)
             }
             console.log(res);
             console.log(res.data)
-            if(res.data.modifiedCount>0){
-                refetch();  //-------comment-----
+            if(res.data.modifiedData){
+                // setRequestList(res.data.modifiedData)
+                refetch(); 
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -39,25 +41,9 @@ const AllRequests = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+
             }
         })
-
-        
-       
-        // axiosSecure.post('/requests',approvalDate)
-        // .then(res=>{
-        //     console.log(res.data)
-        //     if(res.data.insertedId){
-        //         Swal.fire({
-        //             position: "top-end",
-        //             icon: "success",
-        //             title: `Request for ${name} has been approved!`,
-        //             showConfirmButton: false,
-        //             timer: 1500
-        //           });
-        //           refetch();
-        //     }
-        // })
     }
 
     //handle REJECT---- Function
@@ -144,11 +130,18 @@ const AllRequests = () => {
                                 {/* REQUEST_DATE */}
                                 <td>{item.request_date}</td>
                                 {/* APPROVAL DATE */}
-                                <td>{item.approval}</td>
+                                <td>{item.approval_date}</td>
                                 {/* ----STATUS------ */}
-                                <td className="text-orange-400 font-semibold">{item.status}</td>
+                                <td className={item.status === 'Pending'?
+                                    "text-orange-400 font-semibold"
+                                    : "text-purple-500 font-semibold"
+                                 }>
+                                    {item.status}
+                                </td>
                                 <th>
-                                    {item.approval_date? <p className="text-purple-400 font-semibold">Approved</p> :
+                                    {item.approval_date? <button disabled className="btn btn-base btn-xs">Approve</button>
+                                    // <p className="text-purple-400 font-semibold">Approved</p> 
+                                    :
                                     <button onClick={()=>handleApprove(item)} className="btn btn-base btn-xs">Approve</button>
                                     }
                                 </th>

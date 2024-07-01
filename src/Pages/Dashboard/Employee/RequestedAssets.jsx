@@ -3,12 +3,27 @@ import Title from "../../../Components/Title";
 import useRequest from "../../../Hooks/useRequest";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const RequestedAssets = () => {
     const [allRequests,refetch] = useRequest();
     const axiosSecure = useAxiosSecure();
     console.log(allRequests);
+    //--------------------------------------------------
+    const {user} = useContext(AuthContext);
+
+    const [jobs,setJobs] = useState([]);
+
+    useEffect(()=>{
+        fetch(`${import.meta.env.VITE_API_URL}/myJobs/${user?.email}`)
+        .then (res=>res.json())
+        .then(data=>{
+            setJobs(data);
+        })
+    },[user])
+    //-------------------------------------------
     const handleDelete = id =>{
         Swal.fire({
             title: "Are you sure?",
@@ -91,9 +106,9 @@ const RequestedAssets = () => {
                                 {/* REQUEST_DATE */}
                                 <td>{item.request_date}</td>
                                 {/* APPROVAL DATE */}
-                                <td></td>
+                                <td>{item.approval_date} </td>
                                 {/* ----STATUS------ */}
-                                <td className="text-orange-400 font-semibold">Pending</td>
+                                <td className="text-orange-400 font-semibold">{item.status}</td>
                                 <th>
                                     <button onClick={()=>handleDelete(item._id)} className="btn btn-outline text-red-500 btn-xs">Cancel</button>
                                 </th>

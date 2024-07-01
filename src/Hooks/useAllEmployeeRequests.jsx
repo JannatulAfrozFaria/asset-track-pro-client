@@ -11,7 +11,6 @@ const useAllEmployeeRequests = () => {
     const {data : allEmployeeRequests = [],refetch} = useQuery({
         queryKey: ['allEmployeeRequests', user?.email],
         queryFn: async()=>{
-            // const res = await axiosSecure.get(`/requests?email=${user.email}`)
             const res = await axiosSecure.get('/requests')
             return res.data;
         }
@@ -24,7 +23,7 @@ const useAllEmployeeRequests = () => {
     // const[loading,setLoading] = useState(true)
     // useEffect(()=>{
     //     setLoading(true)
-    //     fetch('https://asset-track-pro-server.vercel.app/requests')
+    //     fetch('http://localhost:5000/requests')
     //     .then(res=> res.json())
     //     .then(data=>{
     //         setAllEmployeeRequests(data);

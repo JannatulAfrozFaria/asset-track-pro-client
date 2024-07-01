@@ -6,7 +6,7 @@ import useRequest from "../../../Hooks/useRequest";
 const MyPendingRequests = () => {
     const [allRequests,refetch] = useRequest();
     const axiosSecure = useAxiosSecure();
-    console.log(allRequests);
+    // console.log(allRequests);
     const handleDelete = id =>{
         Swal.fire({
             title: "Are you sure?",

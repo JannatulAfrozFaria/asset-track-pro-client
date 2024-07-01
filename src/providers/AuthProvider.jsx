@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useLayoutEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import {app} from "../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -44,7 +44,7 @@ const AuthProvider = ({children}) => {
         // });
     }
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth,currentUser=>{
             setUser(currentUser);
             // console.log('current user', currentUser)
@@ -54,15 +54,18 @@ const AuthProvider = ({children}) => {
                 axiosPublic.post('/jwt', userInfo)
                     .then(res=>{
                         if(res.data.token){
+                            // console.log(res.data.token);
                             localStorage.setItem('access-token', res.data.token);
+                            setLoading(false);
                         }
                     })
             }
             else{
-            //remove token(if token stored in the client side: Local storage/caching/ in memory)
+            // remove token(if token stored in the client side: Local storage/caching/ in memory)
             localStorage.removeItem('access-token');
-            }
             setLoading(false);
+            }
+            // setLoading(false);
         });
         return()=>{
             return unsubscribe;
