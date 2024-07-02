@@ -9,7 +9,7 @@
 
   https://asset-track-pro-34487.web.app/
 
-## Features of Tourista
+## Features of Asset Track Pro
 
 - User Role Management:
 
@@ -29,7 +29,7 @@ Offers Employees a personal dashboard to track their requests and HR Managers an
 
 
 
-## npm package used for challenge task
+## npm package used for various task
 
  - [Framer Motion](https://www.npmjs.com/package/framer-motion)
  - [TanStack Query](https://tanstack.com/query/v4/docs/framework/react/quick-start)
