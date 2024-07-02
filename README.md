@@ -67,7 +67,9 @@ Start the server
 ```
 
 
+## Support
 
+For support, email afroz_faria03@yahoo.com or join our Slack channel.
 
 
 ## Technologies Used
