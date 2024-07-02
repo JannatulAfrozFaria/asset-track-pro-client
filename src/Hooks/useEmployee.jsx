@@ -41,7 +41,7 @@ const useEmployee = () => {
 //     const[loading,setLoading] = useState(true)
 //     useEffect(()=>{
 //         setLoading(true)
-//         fetch('http://localhost:5000/users')
+//         fetch('https://asset-track-pro-server.vercel.app/users')
 //         .then(res=> res.json())
 //         .then(data=>{
 //             setEmployees(data);

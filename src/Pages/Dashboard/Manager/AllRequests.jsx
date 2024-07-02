@@ -65,7 +65,7 @@ const AllRequests = () => {
                     if(res.data.deletedCount>0){
                           refetch();
                           Swal.fire({
-                                      title: "Deleted!",
+                                      title: "Rejected!",
                                       text: `Request has been Rejected.`,
                                       icon: "success"
                                     });
@@ -146,7 +146,12 @@ const AllRequests = () => {
                                     }
                                 </th>
                                 <th>
+                                    {item.approval_date? <button disabled className="btn btn-base btn-xs">Reject</button>
+                                    // <p className="text-purple-400 font-semibold">Approved</p> 
+                                    :
                                     <button onClick={()=>handleReject(item._id)} className="btn btn-outline text-red-500 btn-xs">Reject</button>
+                                    }
+                                    {/* <button onClick={()=>handleReject(item._id)} className="btn btn-outline text-red-500 btn-xs">Reject</button> */}
                                 </th>
                             </tr>
                         )}

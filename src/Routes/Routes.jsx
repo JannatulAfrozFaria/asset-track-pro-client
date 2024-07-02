@@ -58,7 +58,7 @@ import UpdateProfile from "../Pages/Dashboard/Common/UpdateProfile";
         {
             path: 'buyPackage/:id',
             element: <BuyPackage></BuyPackage>,
-            loader: ({params}) =>fetch(`http://localhost:5000/packages/${params.id}`)
+            loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/packages/${params.id}`)
         }
     ]
     },
@@ -84,7 +84,7 @@ import UpdateProfile from "../Pages/Dashboard/Common/UpdateProfile";
                 element: <AdminRoute>
                             <UpdateAnAsset></UpdateAnAsset>
                          </AdminRoute>,
-                loader: ({params}) =>fetch(`http://localhost:5000/assets/${params.id}`)
+                loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/assets/${params.id}`)
                          
             },
             {
@@ -123,7 +123,7 @@ import UpdateProfile from "../Pages/Dashboard/Common/UpdateProfile";
                 // path: 'updateProfile/:email',
                 path: 'updateProfile',
                 element: <UpdateProfile></UpdateProfile>,
-                // loader: ({params}) =>fetch(`http://localhost:5000/updateProfile/${params.email}`)
+                // loader: ({params}) =>fetch(`https://asset-track-pro-server.vercel.app/updateProfile/${params.email}`)
             }
         ]
     }
