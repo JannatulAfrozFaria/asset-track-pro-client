@@ -75,5 +75,6 @@ Start the server
  - [Tailwind CSS](https://tailwindcss.com/)
  - [Daisy UI](https://daisyui.com/)
  - [React Router](https://reactrouter.com/en/main)
-  - [Fire Base](https://console.firebase.google.com/)
+ - [Fire Base](https://console.firebase.google.com/)
+ - [MongoDB](https://www.mongodb.com/)
 
