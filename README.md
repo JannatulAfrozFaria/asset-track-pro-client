@@ -29,7 +29,7 @@ Offers Employees a personal dashboard to track their requests and HR Managers an
 
 
 
-## npm package used for various task
+## npm package explored in this project
 
  - [Framer Motion](https://www.npmjs.com/package/framer-motion)
  - [TanStack Query](https://tanstack.com/query/v4/docs/framework/react/quick-start)
