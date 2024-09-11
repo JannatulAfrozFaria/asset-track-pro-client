@@ -32,8 +32,8 @@ const NavBar = () => {
                     {/* DYNAMIC COMPANY NAME */}
                     <img className='w-16' src="/src/assets/icons/icon.png" alt="" />
                     {/* <a className="btn btn-ghost text-xl"> Asset Track Pro Ltd</a> */}
-                    <a className="btn btn-ghost text-xl"> 
-                        Asset Track Pro Ltd
+                    <a className="btn btn-ghost text-xl text-purple-800"> 
+                         Asset <span className="text-purple-300">Track Pro</span>  Ltd
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
