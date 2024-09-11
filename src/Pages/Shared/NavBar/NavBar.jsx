@@ -19,7 +19,7 @@ const NavBar = () => {
     </>
     return (
         <>
-            <div className="navbar bg-base-100 w-full lg:w-[1500px] mx-auto shadow-xl shadow-purple-300">
+            <div className="navbar bg-purple-900 w-full mx-auto shadow-lg shadow-purple-300 text-purple-200">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,7 +32,7 @@ const NavBar = () => {
                     {/* DYNAMIC COMPANY NAME */}
                     <img className='w-16' src="/src/assets/icons/icon.png" alt="" />
                     {/* <a className="btn btn-ghost text-xl"> Asset Track Pro Ltd</a> */}
-                    <a className="btn btn-ghost text-xl text-purple-800"> 
+                    <a className="btn btn-ghost text-xl text-purple-100"> 
                          Asset <span className="text-purple-300">Track Pro</span>  Ltd
                     </a>
                 </div>
