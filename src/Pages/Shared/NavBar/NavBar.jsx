@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Tippy from "@tippyjs/react";
+import logo from "../../../assets/icons/icon.png";
 // import useAdmin from "../../../Hooks/useAdmin";
 
 const NavBar = () => {
@@ -30,7 +31,7 @@ const NavBar = () => {
                     </ul>
                     </div>
                     {/* DYNAMIC COMPANY NAME */}
-                    <img className='w-16' src="/src/assets/icons/icon.png" alt="" />
+                    <img className='w-16' src={logo} alt="" />
                     {/* <a className="btn btn-ghost text-xl"> Asset Track Pro Ltd</a> */}
                     <a className="btn btn-ghost text-xl text-purple-100"> 
                          Asset <span className="text-purple-300">Track Pro</span>  Ltd
