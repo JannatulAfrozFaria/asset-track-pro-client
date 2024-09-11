@@ -6,10 +6,15 @@
     color: rgb(77, 10, 139);
 }
 .active{
-    background-color:blueviolet !important ;
-    font-weight: 600 !important;
-    color: white !important;
+    background-color:rgb(223, 198, 247) !important ;
+    font-weight: bold !important;
+    color: rgb(149, 34, 184) !important;
 }
+/* .active{
+    background-color:rgb(45, 137, 183) !important ;
+    font-weight: bold;
+    color: white!important ;
+} */
 .btn-base{
     font-weight: bold;
     color: white;

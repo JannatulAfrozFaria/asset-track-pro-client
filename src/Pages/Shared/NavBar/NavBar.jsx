@@ -18,6 +18,9 @@ const NavBar = () => {
         <li><Link to="/joinAsManager"><a href="">Join as HR Manager</a></Link> </li>
         <li><Link to="/dashboard/profile"><a href="">Dashboard</a></Link> </li>
     </>
+    NavOptions.forEach(navLink =>{
+        
+    })
     return (
         <>
             <div className="navbar bg-purple-900 w-full mx-auto shadow-lg shadow-purple-300 text-purple-200">
@@ -38,7 +41,7 @@ const NavBar = () => {
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 ">
                         {NavOptions}
                     </ul>
                 </div>
