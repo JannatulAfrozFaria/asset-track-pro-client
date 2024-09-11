@@ -19,7 +19,10 @@ const NavBar = () => {
         <li><Link to="/dashboard/profile"><a href="">Dashboard</a></Link> </li>
     </>
     NavOptions.forEach(navLink =>{
-        
+        navLink.addEventListener('click', () =>{
+            document.querySelector('.active')?.classList.remove('active');
+            navLink.classList.add('active');
+        });
     })
     return (
         <>
