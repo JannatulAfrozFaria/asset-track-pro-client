@@ -47,7 +47,7 @@ const PendingRequests = () => {
     }
 
     return (
-        <div className="w-5/6 mx-auto text-center my-16">
+        <div className="w-5/6 md:w-full mx-auto text-center my-16">
             {/* <Helmet>
                 <title>Asset Track Pro | All Requested Assets</title>
             </Helmet> */}
