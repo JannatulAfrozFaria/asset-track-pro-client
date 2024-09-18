@@ -5,7 +5,7 @@ import pic from '../../../assets/About/purple-maroon.jpg'
 
 const ManageATeam = () => {
     return (
-        <div className="w-5/6 mx-auto">
+        <div className="w-5/6 md:w-full mx-auto pb-20">
              <Title heading={'Manage A Team'} subHeading={'You can buy a package and manage a team'} ></Title>
             <div className="card card-side bg-base-100 shadow-xl">
                 <figure> <img className="w-[400px] " src={pic}/> </figure>
