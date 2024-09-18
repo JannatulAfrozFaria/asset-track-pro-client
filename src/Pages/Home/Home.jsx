@@ -47,22 +47,16 @@ const Home = () => {
                 :
                 <></>
             } */}
-            
+
             {/* MODIFIED------ FOR----- PORT----- FOLIO------------- */}
             {
                 isHR?
                 <>
                   <PendingRequests></PendingRequests>
-                  <TopMostRequestedItems></TopMostRequestedItems>
-                  <LimitedStockItems></LimitedStockItems>
-                  <PieChartDisplay></PieChartDisplay>
-                  <ClockSection></ClockSection>
-                  <NoticeSection></NoticeSection>
                 </>
                 : user?
                 <>
                     <MyPendingRequests></MyPendingRequests>
-                    <Events></Events>
                 </>
                 :
                 <></>
@@ -70,6 +64,12 @@ const Home = () => {
 
             {/* GENERAL------------------ */}
             <About></About>
+            <TopMostRequestedItems></TopMostRequestedItems>
+            <LimitedStockItems></LimitedStockItems>
+            <PieChartDisplay></PieChartDisplay>
+            <ClockSection></ClockSection>
+            <NoticeSection></NoticeSection>
+            <Events></Events>
             <Packages></Packages>
         </div>
     );
