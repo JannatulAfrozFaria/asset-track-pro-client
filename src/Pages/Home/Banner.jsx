@@ -29,7 +29,7 @@ const Banner = () => {
                             <button className="btn w-1/3 mx-auto btn-base">Join As Employee</button>
                         </Link>
                     </div>
-                    <img  src={bg2}  />
+                    <img  src={'https://i.postimg.cc/yxKRwLM9/feather-1.jpg'}  />
                     {/* <p className="legend">Legend 2</p> */}
                 </div>
             </Carousel>
