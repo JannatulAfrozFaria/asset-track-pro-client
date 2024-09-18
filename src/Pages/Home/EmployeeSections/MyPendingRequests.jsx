@@ -52,7 +52,7 @@ const MyPendingRequests = () => {
                         <th>Asset Name</th>
                         <th>Asset Type</th>
                         <th>Request Date</th>
-                        {/* <th>Action</th> */}
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -84,7 +84,7 @@ const MyPendingRequests = () => {
                                 {/* REQUEST_DATE */}
                                 <td>{item.request_date}</td>
                                 <th>
-                                    {/* <button onClick={()=>handleDelete(item._id)} className="btn btn-outline text-red-500 btn-xs">Cancel</button> */}
+                                    <button onClick={()=>handleDelete(item._id)} className="btn btn-outline text-red-500 btn-xs">Cancel</button>
                                 </th>
                             </tr>
                         )}
