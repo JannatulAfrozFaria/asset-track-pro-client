@@ -61,7 +61,6 @@ const Home = () => {
                 :
                 <></>
             }
-
             {/* GENERAL------------------ */}
             <About></About>
             <TopMostRequestedItems></TopMostRequestedItems>
