@@ -7,7 +7,7 @@ import bg2 from '../../assets/About/feather-1.jpg'
 const Banner = () => {
     return (
         <div className="mt-8 md:mt-12">
-            <Carousel className="w-5/6 md:full mx-auto"
+            <Carousel className=""
                 autoPlay 
                 interval={3000} 
                 infiniteLoop 
