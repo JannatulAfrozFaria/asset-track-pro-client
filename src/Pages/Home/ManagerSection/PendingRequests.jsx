@@ -71,7 +71,7 @@ const PendingRequests = () => {
                         <th>Name of Requester</th>
                         <th>Request Date</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        {/* <th>Action</th> */}
                     </tr>
                     </thead>
                     <tbody>
@@ -102,9 +102,9 @@ const PendingRequests = () => {
                                     "text-orange-400 font-semibold"
                                     : "text-purple-500 font-semibold"
                                  }>{item.status}</td>
-                                <th>
+                                {/* <th>
                                     <button onClick={()=>handleReject(item._id)} className="btn btn-outline text-red-500 btn-xs">Reject</button>
-                                </th>
+                                </th> */}
                             </tr>
                         )}
                     </tbody>
