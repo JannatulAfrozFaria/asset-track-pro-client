@@ -17,7 +17,7 @@ const Banner = () => {
                         <p className="text-sm md:text-lg text-white text-center w-5/6 md:w-1/2 my-3 md:my-8 mx-auto">Join AssetTrackPro today and revolutionize your asset management. Streamline tracking, maximize efficiency, and gain complete control over your assets with our intuitive platform. Experience the ease and precision of AssetTrackPro, your trusted partner in effective asset management.</p>
                         <Link to='/joinAsManager'>
                             <button className="btn btn-primary w-1/3 mx-auto 
-                              text-white font-bold bg-purple-700">Join As HR Manger</button>
+                              text-white font-bold bg-purple-700">Join As HR Manager</button>
                         </Link>
                     </div>
                     <img  src={bg1} />

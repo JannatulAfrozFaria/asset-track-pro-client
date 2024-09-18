@@ -29,6 +29,26 @@ const Home = () => {
                 <title>Asset Track Pro | Home</title>
             </Helmet>
             <Banner></Banner>
+            {/* {
+                isHR?
+                <>
+                  <PendingRequests></PendingRequests>
+                  <TopMostRequestedItems></TopMostRequestedItems>
+                  <LimitedStockItems></LimitedStockItems>
+                  <PieChartDisplay></PieChartDisplay>
+                  <ClockSection></ClockSection>
+                  <NoticeSection></NoticeSection>
+                </>
+                : user?
+                <>
+                    <MyPendingRequests></MyPendingRequests>
+                    <Events></Events>
+                </>
+                :
+                <></>
+            } */}
+            
+            {/* MODIFIED------ FOR----- PORT----- FOLIO------------- */}
             {
                 isHR?
                 <>

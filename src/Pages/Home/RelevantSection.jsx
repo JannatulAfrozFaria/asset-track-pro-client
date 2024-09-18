@@ -13,22 +13,7 @@ const RelevantSection = () => {
     const [isHR] = useAdmin();
     return (
         <div>
-            {/* {user &&
-                <>
-                    <MyPendingRequests></MyPendingRequests>
-                    <Events></Events>
-                </> 
-            }
-            {isHR &&
-                <>
-                    <PendingRequests></PendingRequests>
-                    <LimitedStockItems></LimitedStockItems>
-                    <PieChart></PieChart>
-                    <Events></Events>
-                </> 
-            } */}
-
-            { isHR ?
+            {/* { isHR ?
                 <>
                     <PendingRequests></PendingRequests>
                     <LimitedStockItems></LimitedStockItems>
@@ -39,6 +24,21 @@ const RelevantSection = () => {
                 <>
                     <MyPendingRequests></MyPendingRequests>
                     <Events></Events>
+                </>     
+             } */}
+
+
+             {/* MODIFIED------ FOR----- PORT----- FOLIO------------- */}
+             <LimitedStockItems></LimitedStockItems>
+             <PieChartDisplay></PieChartDisplay>
+             <Events></Events>
+            { isHR ?
+                <>
+                    <PendingRequests></PendingRequests>
+                </>   
+                :
+                <>
+                    <MyPendingRequests></MyPendingRequests>
                 </>     
              }
         </div>
