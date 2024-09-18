@@ -23,7 +23,7 @@ const TopMostRequestedItems = () => {
   const topRequestedAssets = requestCountsArray.slice(0, 4);
 //   console.log(topRequestedAssets)
     return (
-        <div className="w-5/6 mx-auto">
+        <div className="w-5/6 md:w-full mx-auto">
             <Title heading={'TOP MOST REQUESTED ITEMS'} subHeading={'Here is the list of top most Requested Items'} ></Title>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {topRequestedAssets.map(([asset, data], index) => (
