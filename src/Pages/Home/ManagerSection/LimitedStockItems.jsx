@@ -13,7 +13,7 @@ const LimitedStockItems = () => {
       }, [loading]);
 
     return (
-        <div className="w-5/6 mx-auto text-center mb-16">
+        <div className="w-5/6 md:w-full mx-auto text-center mb-16">
             <Title heading={'limited stock items'} subHeading={'Here is the list of assets which are less than 10 in quantity.'} ></Title>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {limitedAssets.slice(0,6).map(asset=>
