@@ -24,7 +24,7 @@ const Home = () => {
     const [isHR] = useAdmin();
     // console.log(isHR);
     return (
-        <div>
+        <div className=''>
             <Helmet>
                 <title>Asset Track Pro | Home</title>
             </Helmet>
@@ -55,7 +55,7 @@ const Home = () => {
             <ClockSection></ClockSection>
             <Packages></Packages> */}
 
-            
+
 
             {/* MODIFIED------ FOR----- PORT----- FOLIO------------- */}
             {
