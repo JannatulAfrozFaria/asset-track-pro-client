@@ -56,12 +56,12 @@ const Home = () => {
                 </>
                 : user?
                 <>
-                    <MyPendingRequests></MyPendingRequests>
                 </>
                 :
                 <></>
             }
             {/* GENERAL------------------ */}
+            <MyPendingRequests></MyPendingRequests>
             <About></About>
             <TopMostRequestedItems></TopMostRequestedItems>
             <LimitedStockItems></LimitedStockItems>
