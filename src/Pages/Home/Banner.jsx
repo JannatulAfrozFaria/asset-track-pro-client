@@ -20,7 +20,7 @@ const Banner = () => {
                               text-white font-bold bg-purple-700">Join As HR Manager</button>
                         </Link>
                     </div>
-                    <img  src={bg1} />
+                    <img  src={'https://i.postimg.cc/MK8tSD79/black-blue-purple.jpg'} />
                 </div>
                 <div>
                    <div className="absolute top-1/4 left-1/5 mx-auto ">
