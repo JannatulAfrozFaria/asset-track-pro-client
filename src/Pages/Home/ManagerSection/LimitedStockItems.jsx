@@ -18,7 +18,7 @@ const LimitedStockItems = () => {
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {limitedAssets.slice(0,6).map(asset=>
                     <div key={asset._id} className="card bg-base-100 shadow-xl">
-                        <figure><img className="w-[400px] h-[240px]" src={asset.image}  alt="Shoes" /></figure>
+                        <figure><img className="w-full h-[240px]" src={asset.image}  alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
                             {asset.name}

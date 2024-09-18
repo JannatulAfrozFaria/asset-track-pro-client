@@ -71,13 +71,12 @@ const Home = () => {
                 <></>
             }
             {/* GENERAL------------------ */}
+            <About></About>
             <TopMostRequestedItems></TopMostRequestedItems>
             <LimitedStockItems></LimitedStockItems>
             <PendingRequests></PendingRequests>
-            <About></About>
-            
-            <ClockSection></ClockSection>
             <Events></Events>
+            <ClockSection></ClockSection>
             <Packages></Packages>
             <ManageATeam></ManageATeam>
             <PieChartDisplay></PieChartDisplay>

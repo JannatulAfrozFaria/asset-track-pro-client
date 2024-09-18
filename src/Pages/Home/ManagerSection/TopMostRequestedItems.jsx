@@ -29,7 +29,7 @@ const TopMostRequestedItems = () => {
                 {topRequestedAssets.map(([asset, data], index) => (
                     // <li key={index}>{asset}: {count} requests</li>
                     <div key={index} className="card bg-base-100 shadow-xl">
-                        <figure><img className="h-[280px]" src={data.image} alt={asset} /></figure>
+                        <figure><img className=" w-full h-[200px]" src={data.image} alt={asset} /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{asset}: {data.count} {data.count === 1 ? 'Request' : 'Requests' }</h2>
                         </div>
