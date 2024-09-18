@@ -52,17 +52,19 @@ const Home = () => {
             {
                 isHR?
                 <>
-                  <PendingRequests></PendingRequests>
+                  
                 </>
                 : user?
                 <>
+                <MyPendingRequests></MyPendingRequests>
                 </>
                 :
                 <></>
             }
             {/* GENERAL------------------ */}
-            <MyPendingRequests></MyPendingRequests>
+            
             <About></About>
+            <PendingRequests></PendingRequests>
             <TopMostRequestedItems></TopMostRequestedItems>
             <LimitedStockItems></LimitedStockItems>
             <PieChartDisplay></PieChartDisplay>
