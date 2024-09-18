@@ -24,7 +24,7 @@ const Home = () => {
     const [isHR] = useAdmin();
     // console.log(isHR);
     return (
-        <div className=''>
+        <div className='h-screen bg-gradient-to-r from-purple-950 to-purple-200'>
             <Helmet>
                 <title>Asset Track Pro | Home</title>
             </Helmet>
