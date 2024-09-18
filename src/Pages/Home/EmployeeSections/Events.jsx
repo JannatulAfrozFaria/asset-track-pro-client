@@ -15,7 +15,7 @@ const Events = () => {
     }, []);
     return (
         <div className="w-5/6 mx-auto">
-            <Title heading={'upcoming Events'} subHeading={'Here is the upcoming events by various organizers'} ></Title>
+            <Title heading={'upcoming Events'} subHeading={'Here are the upcoming events by various organizers'} ></Title>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {events.map(event=>
                     <div key={event.id} className="card bg-base-100 shadow-xl image-full">
