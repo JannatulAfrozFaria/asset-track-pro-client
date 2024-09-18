@@ -16,7 +16,7 @@ import useAdmin from '../../Hooks/useAdmin';
 import useAuth from '../../Hooks/useAuth';
 import TopMostRequestedItems from './ManagerSection/TopMostRequestedItems';
 import ClockSection from './ManagerSection/ClockSection';
-import NoticeSection from './ManagerSection/NoticeSection';
+import ManageATeam from './ManagerSection/ManageATeam';
 
 const Home = () => {
     const {user} = useAuth();
@@ -67,7 +67,7 @@ const Home = () => {
             <LimitedStockItems></LimitedStockItems>
             <PieChartDisplay></PieChartDisplay>
             <ClockSection></ClockSection>
-            <NoticeSection></NoticeSection>
+            <ManageATeam></ManageATeam>
             <Events></Events>
             <Packages></Packages>
         </div>

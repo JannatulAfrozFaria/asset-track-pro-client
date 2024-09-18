@@ -8,7 +8,7 @@ const ManageATeam = () => {
         <div className="w-5/6 mx-auto">
              <Title heading={'Manage A Team'} subHeading={'You can buy a package and manage a team'} ></Title>
             <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img className="w-[400px] " src={pic}/></figure>
+                <figure> <img className="w-[400px] " src={pic}/> </figure>
                 <div className="card-body">
                     <h2 className="card-title">You can add members to your team!</h2>
                     <p>Buy a Package and add members to your team.</p>
