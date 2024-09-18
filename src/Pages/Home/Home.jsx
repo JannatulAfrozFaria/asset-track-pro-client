@@ -48,6 +48,15 @@ const Home = () => {
                 <></>
             } */}
 
+             {/* GENERAL------------------ */}
+            {/* <About></About>
+            <Events></Events>
+            <PieChartDisplay></PieChartDisplay>
+            <ClockSection></ClockSection>
+            <Packages></Packages> */}
+
+            
+
             {/* MODIFIED------ FOR----- PORT----- FOLIO------------- */}
             {
                 isHR?
@@ -62,11 +71,10 @@ const Home = () => {
                 <></>
             }
             {/* GENERAL------------------ */}
-            
-            <About></About>
-            <PendingRequests></PendingRequests>
             <TopMostRequestedItems></TopMostRequestedItems>
             <LimitedStockItems></LimitedStockItems>
+            <PendingRequests></PendingRequests>
+            <About></About>
             <PieChartDisplay></PieChartDisplay>
             <ClockSection></ClockSection>
             <ManageATeam></ManageATeam>
