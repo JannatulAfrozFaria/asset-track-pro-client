@@ -14,7 +14,10 @@ const LimitedStockItems = () => {
 
     return (
         <div className="w-5/6 md:w-full mx-auto text-center mb-16">
-            <Title heading={'limited stock items'} subHeading={'Here is the list of assets which are less than 10 in quantity.'} ></Title>
+             <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="50" data-aos-duration="2000" >
+                <Title heading={'limited stock items'} subHeading={'Here is the list of assets which are less than 10 in quantity.'} ></Title>
+            </div>
+            
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {limitedAssets.slice(0,6).map(asset=>
                     <div key={asset._id} className="card bg-base-100 shadow-xl">
