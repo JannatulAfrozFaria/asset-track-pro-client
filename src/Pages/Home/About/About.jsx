@@ -5,7 +5,7 @@ import icon from '../../../assets/About/icon.png'
 const About = () => {
     return (
         <div className='featured-item bg-fixed text-white pt-8 my-20 w-5/6 md:w-full mx-auto'>
-            <div className='w-4/5 md:w-full mx-auto'>
+            <div data-aos="zoom-in-down" data-aos-delay="200" data-aos-duration="2000" data-aos-easing="ease-in-out" className='w-4/5 md:w-full mx-auto'>
                 <Title title={'About Us'} caption={'Efficiently managing your assets with precision and expertise'}></Title>
             </div>
             <div className='flex flex-col md:flex-row-reverse justify-center items-center bg-slate-500 bg-opacity-60 pb-10 md:pb-20 pt-0 md:pt-12 px-8 md:px-36 gap-6'>
