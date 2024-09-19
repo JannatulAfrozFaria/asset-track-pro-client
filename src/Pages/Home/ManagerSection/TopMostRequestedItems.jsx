@@ -24,7 +24,10 @@ const TopMostRequestedItems = () => {
 //   console.log(topRequestedAssets)
     return (
         <div className="w-5/6 md:w-full mx-auto">
-            <Title heading={'TOP MOST REQUESTED ITEMS'} subHeading={'Here is the list of top most Requested Items'} ></Title>
+             <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="100" data-aos-duration="2000>
+                 <Title heading={'TOP MOST REQUESTED ITEMS'} subHeading={'Here is the list of top most Requested Items'} ></Title>
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {topRequestedAssets.map(([asset, data], index) => (
                     // <li key={index}>{asset}: {count} requests</li>
