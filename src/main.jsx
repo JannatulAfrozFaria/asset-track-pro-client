@@ -10,7 +10,11 @@ import AuthProvider from './providers/AuthProvider';
 import {
   QueryClient,
   QueryClientProvider,
-} from '@tanstack/react-query'
+} from '@tanstack/react-query',
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 // Create a client
 const queryClient = new QueryClient();
