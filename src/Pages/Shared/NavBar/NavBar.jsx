@@ -40,9 +40,9 @@ const NavBar = () => {
                         </ul>
                     </div>
                     {/* DYNAMIC COMPANY NAME */}
-                    <img className='w-16' src={logo} alt="" />
+                    <img className='w-6 md:w-16' src={logo} alt="" />
                     {/* <a className="btn btn-ghost text-xl"> Asset Track Pro Ltd</a> */}
-                    <a className="btn btn-ghost text-xl text-purple-100">
+                    <a className="btn btn-ghost text-md md:text-xl text-purple-100">
                         Asset <span className="text-purple-300">Track Pro</span>  Ltd
                     </a>
                 </div>
@@ -57,8 +57,8 @@ const NavBar = () => {
                         user ? <>
                             <Tippy content={user?.displayName} >
                                 <Link to='/dashboard/profile'>
-                                    <div className="profile-pic w-10 rounded-full mr-3">
-                                        <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
+                                    <div className="profile-pic w-6 md:w-10 rounded-full mr-3">
+                                        <img className=" w-6 md:w-10 rounded-full" src={user?.photoURL} alt="" />
                                     </div>
                                 </Link>
                             </Tippy>
@@ -66,9 +66,9 @@ const NavBar = () => {
                                 <div>{user?.displayName} </div>
                                 <div> <img className="w-12 rounded-full" src={user?.photoURL} alt="" /> </div>
                             </div> */}
-                            <button onClick={handleLogOut}><Link className="btn btn-base"><a href="">Logout</a></Link></button>
+                            <button onClick={handleLogOut}><Link className="btn btn-sm md:btn-md  btn-base"><a href="">Logout</a></Link></button>
                         </>
-                            : <><Link className="btn btn-base" to="/login"><a href="">Login</a></Link></>
+                            : <><Link className="btn btn-base " to="/login"><a href="">Login</a></Link></>
                     }
 
                 </div>
