@@ -18,7 +18,7 @@ const LimitedStockItems = () => {
                 <Title heading={'limited stock items'} subHeading={'Here is the list of assets which are less than 10 in quantity.'} ></Title>
             </div>
             
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <div data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="200" data-aos-duration="2000" className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {limitedAssets.slice(0,6).map(asset=>
                     <div key={asset._id} className="card bg-base-100 shadow-xl">
                         <figure><img className="w-full h-[240px]" src={asset.image}  alt="Shoes" /></figure>
