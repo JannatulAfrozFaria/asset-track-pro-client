@@ -15,10 +15,14 @@ const Events = () => {
     }, []);
     return (
         <div className="w-5/6 md:w-full mx-auto">
-            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="300" data-aos-duration="2000">
-            <Title heading={'upcoming Events'} subHeading={'Here are the upcoming events by various organizers'} ></Title>
+            <div 
+
+            // data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="300" data-aos-duration="2000"
+
+            className=" animate-bounce delay-200 duration-1000">
+              <Title heading={'upcoming Events'} subHeading={'Here are the upcoming events by various organizers'} ></Title>
             </div>
-            <div data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="900" data-aos-duration="2000"  className=" animate__animated animate__backInUp grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="900" data-aos-duration="2000"  className=" grid grid-cols-1 md:grid-cols-3 gap-6">
                 {events.map(event=>
                     <div key={event.id} className="card bg-base-100 shadow-xl image-full">
                     <figure><img src={bg} alt="Events" /></figure>

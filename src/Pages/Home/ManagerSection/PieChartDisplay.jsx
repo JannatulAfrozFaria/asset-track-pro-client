@@ -39,9 +39,11 @@ import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
     
     return (
         <div className="w-5/6 md:w-full mx-auto pb-20">
-             <Title heading={'returnable and non-returnable asset requests'} subHeading={'Here is the list of returnable and non-returnable asset requests by all the employees'} ></Title>
+            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="50" data-aos-duration="2000" >
+                <Title heading={'returnable and non-returnable asset requests'} subHeading={'Here is the list of returnable and non-returnable asset requests by all the employees'} ></Title>
+            </div>
              {/* <Pie data={chartData} /> */}
-             <div className="w-full md:1/2 mx-auto text-center justify-center">
+             <div data-aos="zoom-in" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="100" data-aos-duration="2000" className="w-full md:w-1/3 mx-auto text-center justify-center">
                 <PieChart width={400} height={400}>
                     <Pie
                         data={pieChartData}
