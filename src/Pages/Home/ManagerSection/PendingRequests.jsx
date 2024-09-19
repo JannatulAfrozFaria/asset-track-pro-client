@@ -51,13 +51,13 @@ const PendingRequests = () => {
             {/* <Helmet>
                 <title>Asset Track Pro | All Requested Assets</title>
             </Helmet> */}
-            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="50" data-aos-duration="2000">
                 <Title heading={'PENDING REQUESTS'} subHeading={'Asset requests made by the employees'} ></Title>
             </div>
             <Link className=" animate-bounce delay-200 duration-1000 text-xl mb-12 text-purple-600 btn border-0 border-b-4 rounded-md border-purple-600" to="/dashboard/allRequests">
                 <a href="">View All Requests</a>
             </Link>
-            <div  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" className="overflow-x-auto ">
+            <div  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="100" data-aos-duration="2000" className="overflow-x-auto ">
                 <table className="table">
                     {/* head */}
                     <thead>
