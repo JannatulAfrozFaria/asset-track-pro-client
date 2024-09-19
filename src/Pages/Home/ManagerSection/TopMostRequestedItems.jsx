@@ -28,7 +28,7 @@ const TopMostRequestedItems = () => {
                  <Title heading={'TOP MOST REQUESTED ITEMS'} subHeading={'Here is the list of top most Requested Items'} ></Title>
             </div>
             
-            <div  data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="200" data-aos-duration="2000" className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div  data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="100" data-aos-duration="2000" className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {topRequestedAssets.map(([asset, data], index) => (
                     // <li key={index}>{asset}: {count} requests</li>
                     <div key={index} className="card bg-base-100 shadow-xl">

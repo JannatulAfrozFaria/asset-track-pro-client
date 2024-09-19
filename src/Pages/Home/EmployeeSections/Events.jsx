@@ -15,6 +15,9 @@ const Events = () => {
     }, []);
     return (
         <div className="w-5/6 md:w-full mx-auto">
+          <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+
+          </div>
             <Title heading={'upcoming Events'} subHeading={'Here are the upcoming events by various organizers'} ></Title>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {events.map(event=>
