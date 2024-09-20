@@ -14,7 +14,7 @@ const ManageATeam = () => {
                 <div className="card-body bg-gradient-to-b md:bg-gradient-to-r from-purple-200 via-white to-purple-500 rounded-b-2xl md:rounded-bl-none md:rounded-tr-2xl ">
                     <h2 data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="100" data-aos-duration="2000"
                      className="card-title ">You can add members to your team!</h2>
-                    <p data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="150" data-aos-duration="2000">Buy a Package and add members to your team.</p>
+                    <p data-aos="fade-down" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="100" data-aos-duration="2000">Buy a Package and add members to your team.</p>
                     <div className="card-actions justify-start">
                         <button className=" animate-bounce delay-200 duration-1000 btn btn-sm w-full md:w-1/3 btn-base">
                             <Link to='/upgradePackage'>Buy Package</Link>
