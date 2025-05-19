@@ -8,7 +8,7 @@ const Main = () => {
         <div className='bg-gradient-to-b from-purple-200 via-white to-violet-300'>
             <NavBar></NavBar>
             <div >
-                <div className="">
+                <div className="max-w-screen-xl mx-auto">
                     <Outlet></Outlet>
                 </div>
             </div>
