@@ -44,7 +44,7 @@ import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
             </div>
              {/* <Pie data={chartData} /> */}
              <div data-aos="zoom-in" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-delay="100" data-aos-duration="2000" className="w-full md:w-1/3 mx-auto text-center justify-center">
-                <PieChart width={400} height={400}>
+                <PieChart width='100%' height={400}>
                     <Pie
                         data={pieChartData}
                         cx="50%"

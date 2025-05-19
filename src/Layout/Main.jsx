@@ -5,7 +5,7 @@ import NavBar from "../Pages/Shared/NavBar/NavBar";
 
 const Main = () => {
     return (
-        <div className='bg-gradient-to-b from-purple-200 via-white to-violet-300'>
+        <div className='bg-gradient-to-b from-purple-200 via-white to-violet-300 overflow-x-hidden'>
             <NavBar></NavBar>
             <div >
                 <div className="max-w-screen-xl mx-auto">
