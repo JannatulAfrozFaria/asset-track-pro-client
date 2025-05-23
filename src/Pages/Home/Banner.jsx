@@ -16,8 +16,11 @@ const Banner = () => {
                 <div className="relative">
                     <div className="absolute top-1/4 left-1/5 mx-auto ">
                         <p className="text-xs md:text-lg text-white text-center w-5/6 md:w-1/2 my-2 md:my-8 mx-auto">Join AssetTrackPro today and revolutionize your asset management. Streamline tracking, maximize efficiency, and gain complete control over your assets with our intuitive platform. Experience the ease and precision of AssetTrackPro, your trusted partner in effective asset management.</p>
-                        <Link to='/joinAsManager'>
+                        {/* <Link to='/joinAsManager'>
                             <button className=" animate-bounce btn w-1/2 md:w-1/3 mx-auto btn-sm  bg-white text-purple-800 ">Join As HR Manager</button>
+                        </Link> */}
+                        <Link to='/login'>
+                            <button className=" animate-bounce btn w-1/2 md:w-1/3 mx-auto btn-sm bg-white text-purple-800">Login</button>
                         </Link>
                     </div>
                     <img src={'https://i.postimg.cc/MK8tSD79/black-blue-purple.jpg'} />
@@ -26,8 +29,11 @@ const Banner = () => {
                 <div>
                     <div className="absolute top-1/4 left-1/5 mx-auto ">
                         <p className="text-xs md:text-lg text-white text-center w-5/6 md:w-1/2 my-2 md:my-8 mx-auto">Elevate your asset management. Simplify tracking, enhance efficiency, and gain total oversight of your assets with our user-friendly platform. Trust AssetTrackPro for accurate and effective asset management solutions.</p>
-                        <Link to='/joinAsEmployee'>
+                        {/* <Link to='/joinAsEmployee'>
                             <button className=" animate-bounce btn w-1/2 md:w-1/3 mx-auto btn-sm  bg-white text-purple-800">Join As Employee</button>
+                        </Link> */}
+                        <Link to='/login'>
+                            <button className=" animate-bounce btn w-1/2 md:w-1/3 mx-auto btn-sm bg-white text-purple-800">Login</button>
                         </Link>
                     </div>
                     <img src={'https://i.postimg.cc/yxKRwLM9/feather-1.jpg'} />

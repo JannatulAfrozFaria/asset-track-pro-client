@@ -15,8 +15,8 @@ const NavBar = () => {
 
     const NavOptions = <>
         <li><Link to="/"><a href="">Home</a></Link> </li>
-        <li><Link to="/joinAsEmployee"><a href="">Join as Employee</a></Link> </li>
-        <li><Link  to="/joinAsManager"><a href="">Join as HR Manager</a></Link> </li>
+        {/* <li><Link to="/joinAsEmployee"><a href="">Join as Employee</a></Link> </li>
+        <li><Link  to="/joinAsManager"><a href="">Join as HR Manager</a></Link> </li> */}
         <li><Link to="/dashboard/profile"><a href="">Dashboard</a></Link> </li>
     </>
     
